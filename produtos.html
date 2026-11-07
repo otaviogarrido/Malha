@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Malha Guest Portal — Wi-Fi corporativo inteligente, autenticação sem atrito via REST API MikroTik, conformidade LGPD e enriquecimento automático de CNPJs com retorno no ERP.">
+  <title>Guest Portal & Produtos — Malha Tecnologia</title>
+
+  <!-- Pré-conexão de Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Folha de Estilos Modular -->
+  <link rel="stylesheet" href="css/main.css?v=6">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. CABEÇALHO & NAVEGAÇÃO SUPERIOR
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <div class="header-lado-esquerdo">
+        <!-- Logotipo -->
+        <a href="index.html" class="site-logo" aria-label="Malha - Página Inicial">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2L17.5 10.5L26 14L17.5 17.5L14 26L10.5 17.5L2 14L10.5 10.5L14 2Z" fill="#1d68ff" />
+            <circle cx="14" cy="14" r="3.2" fill="#ffffff" />
+          </svg>
+          <span>Malha</span>
+        </a>
+
+        <!-- Caixa de Pesquisa no Cabeçalho (Estilo Dell) -->
+        <div class="header-busca-box">
+          <svg class="header-busca-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="text" 
+            class="header-busca-input" 
+            placeholder="O que você está procurando?" 
+            aria-label="Buscar produtos, serviços e soluções da Malha"
+          >
+          <button type="button" class="header-busca-btn" aria-label="Pesquisar">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+          <div class="header-busca-dropdown" style="display: none;"></div>
+        </div>
+      </div>
+
+      <!-- Ações do Cabeçalho: Sobre Nós e Fale Conosco -->
+      <div class="nav-acoes">
+        <a href="sobre.html" class="btn btn-primary btn-sm header-btn-sobre">Sobre Nós</a>
+        <a href="contato.html" class="btn btn-primary btn-solar btn-sm">Fale Conosco</a>
+        <button class="botao-menu-mobile" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <svg class="icone-hamburguer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6" stroke-linecap="round"></line>
+            <line x1="3" y1="12" x2="21" y2="12" stroke-linecap="round"></line>
+            <line x1="3" y1="18" x2="21" y2="18" stroke-linecap="round"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Gaveta do Menu Mobile -->
+  <div class="menu-mobile-backdrop"></div>
+  <aside class="menu-mobile-gaveta" aria-label="Menu móvel">
+    <ul class="menu-mobile-links">
+      <li><a href="index.html">Início <span>→</span></a></li>
+      <li><a href="produtos.html" style="color:var(--cor-primaria); font-weight:700;">Produtos & Guest Portal <span>→</span></a></li>
+      <li><a href="servicos.html">Serviços de TI <span>→</span></a></li>
+      <li><a href="servidores.html">Servidores Linux <span>→</span></a></li>
+      <li><a href="wifi.html">Wi-Fi UniFi <span>→</span></a></li>
+      <li><a href="galeria.html">Galeria 3D <span>→</span></a></li>
+      <li><a href="planos.html">Planos <span>→</span></a></li>
+      <li><a href="contato.html">Contato <span>→</span></a></li>
+    </ul>
+    <div>
+      <a href="contato.html" class="btn btn-primary btn-solar" style="width: 100%;">Falar com a Malha</a>
+      <p style="font-size: 0.8rem; text-align: center; margin-top: 16px; color: var(--cor-texto-mutado);">© 2026 Malha Tecnologia</p>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       FAIXA SUPERIOR AZUL ESCURO ESTILO DELL COM GUIAS / PILLS DE NAVEGAÇÃO
+       ========================================================================= -->
+  <div class="nav-faixa-superior" aria-label="Navegação por categorias e soluções">
+    <div class="container">
+      <ul class="nav-faixa-pills">
+        <li><a href="index.html" class="nav-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg> Início</a></li>
+        <li><a href="produtos.html" class="nav-pill active">Produtos</a></li>
+        <li><a href="servicos.html" class="nav-pill">Serviços</a></li>
+        <li><a href="servidores.html" class="nav-pill">Servidores</a></li>
+        <li><a href="wifi.html" class="nav-pill">Wi-Fi UniFi</a></li>
+        <li><a href="galeria.html" class="nav-pill">Galeria 3D</a></li>
+        <li><a href="planos.html" class="nav-pill">Planos</a></li>
+        <li><a href="contato.html" class="nav-pill">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         BANNER HERO DE CATEGORIA ESTILO DELL (DARK NAVY)
+         ========================================================================= -->
+    <section class="secao-banner-dell">
+      <div class="container">
+        <div class="banner-dell-conteudo">
+          <span class="banner-dell-tag">PRODUTO PRINCIPAL // WI-FI ANALYTICS & CAPTURA DE LEADS</span>
+          <h1 class="banner-dell-titulo">Guest Portal: O Wi-Fi que trabalha para as suas vendas.</h1>
+          <p class="banner-dell-subtitulo">
+            Transforme o Wi-Fi do seu estabelecimento em uma máquina de captar clientes. Coletamos e qualificamos os dados dos seus visitantes com segurança total (LGPD), enriquecemos os contatos com informações de CNPJ e enviamos leads prontos para comprar diretamente no WhatsApp da sua equipe comercial.
+          </p>
+          <div class="banner-dell-acoes">
+            <a href="#fluxo-guestportal" class="btn btn-primary">Ver Fluxo Ponta a Ponta ↓</a>
+            <button type="button" class="btn btn-primary btn-solar btn-abrir-modal-diagnostico">Solicitar Demonstração Gratuita</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         DESTAQUE SPOTLIGHT: GUEST PORTAL EM AÇÃO
+         ========================================================================= -->
+    <section class="spotlight">
+      <div class="container spotlight-grid">
+        <div class="spotlight-text">
+          <h2><span class="gradiente-texto-solar">Guest Portal em ação:<br>Wi-Fi inteligente que gera negócios e faturamento.</span></h2>
+          <p class="lead">
+            Uma jornada de conexão perfeita e sem atritos. O visitante preenche um cadastro rápido e autoriza o uso dos dados (100% LGPD). Em menos de 2 segundos, a internet é liberada e o contato é qualificado automaticamente com dados do CNPJ. O lead chega quente e pronto no WhatsApp da sua equipe comercial.
+          </p>
+          <div class="spotlight-stats">
+            <div class="sp-stat">
+              <span class="num">R$ 24k+</span>
+              <span class="label">faturamento de novos clientes</span>
+            </div>
+            <div class="sp-stat" style="display:flex; align-items:center; gap:12px; flex-direction:row;">
+              <div class="radial-progress progress-verde progress-sm" style="--value:94;" aria-valuenow="94" role="progressbar">94%</div>
+              <div style="display:flex; flex-direction:column;">
+                <span class="label" style="margin:0;">consentimento</span>
+                <span style="font-size:0.75rem; color:var(--cor-verde-texto); font-weight:700;">Conforme LGPD</span>
+              </div>
+            </div>
+            <div class="sp-stat">
+              <span class="num">&lt;2s</span>
+              <span class="label">liberação de acesso</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+            <a href="#fluxo-guestportal" class="btn btn-primary">Ver o Fluxo Completo Passo a Passo ↓</a>
+            <button type="button" class="btn btn-primary btn-solar btn-abrir-modal-diagnostico">Quero Implementar na Minha Empresa</button>
+          </div>
+        </div>
+
+        <div class="spotlight-image-container" style="background:#ffffff; padding:12px; border-radius:24px; border:1px solid #e2e8f0; box-shadow:0 15px 35px -10px rgba(0,0,0,0.08);">
+          <img src="assets/guestportal-fluxo-telas.png" alt="Fluxo completo de telas do Guest Portal com captura de consentimento e qualificação de CNPJ" loading="lazy" style="border-radius:18px;">
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         JORNADA & FLUXO COMPLETO DO GUEST PORTAL
+         ========================================================================= -->
+    <section class="secao-fluxo-guestportal" id="fluxo-guestportal" aria-label="Fluxo detalhado de captura, enriquecimento e geração de leads do Guest Portal">
+      <div class="container">
+        
+        <div class="secao-topo centralizado">
+          <span class="secao-tag secao-tag-solar">Fluxo Ponta a Ponta</span>
+          <h2><span class="gradiente-texto-solar">Do Wi-Fi ao Faturamento no ERP:<br>Como o Guest Portal opera em 5 etapas.</span></h2>
+          <p>Uma jornada fluida, rápida e 100% transparente. Veja como transformamos a simples conexão ao Wi-Fi em um lead qualificado com dados da empresa (CNPJ) e enviamos tudo pronto para o time comercial fechar negócio.</p>
+        </div>
+
+        <!-- Stepper Visual de Jornada (1 a 5) -->
+        <div class="fluxo-stepper">
+          <div class="fluxo-step">
+            <div class="fluxo-step-num">1</div>
+            <span class="fluxo-step-title">Captura & LGPD</span>
+            <span class="fluxo-step-desc">Abre no celular &lt;2s</span>
+          </div>
+          <div class="fluxo-step">
+            <div class="fluxo-step-num">2</div>
+            <span class="fluxo-step-title">Acesso Liberado</span>
+            <span class="fluxo-step-desc">Internet + WhatsApp</span>
+          </div>
+          <div class="fluxo-step">
+            <div class="fluxo-step-num">3</div>
+            <span class="fluxo-step-title">Gatilho B2B / Frota</span>
+            <span class="fluxo-step-desc">Captura de CNPJ</span>
+          </div>
+          <div class="fluxo-step step-verde">
+            <div class="fluxo-step-num">4</div>
+            <span class="fluxo-step-title">Enriquecimento</span>
+            <span class="fluxo-step-desc">Dados públicos Receita</span>
+          </div>
+          <div class="fluxo-step step-verde">
+            <div class="fluxo-step-num">5</div>
+            <span class="fluxo-step-title">Retorno no ERP</span>
+            <span class="fluxo-step-desc">WhatsApp comercial</span>
+          </div>
+        </div>
+
+        <!-- AS TRÊS TELAS NO SMARTPHONE (MOCKUPS ULTRA-ACABADOS) -->
+        <div class="telas-mobile-grid">
+          
+          <!-- Tela 1: Cadastro & Consentimento LGPD -->
+          <div class="tela-mobile-card">
+            <div class="phone-mockup-frame">
+              <div class="phone-mockup-notch"></div>
+              <div class="phone-mockup-screen">
+                <img src="assets/tela-1-cadastro.png" alt="Tela 1 - Cadastro inicial e consentimento LGPD no Guest Portal" loading="lazy">
+              </div>
+            </div>
+            <div class="tela-info">
+              <span class="tela-tag-passo">Passo 01 // Autenticação</span>
+              <h3 class="tela-titulo">1. Cadastro & LGPD</h3>
+              <p class="tela-texto">
+                Abre automaticamente assim que o cliente conecta ao Wi-Fi. Solicita apenas Nome e WhatsApp obrigatórios, com opt-in claro de privacidade em estrita conformidade com a LGPD.
+              </p>
+              <div class="tela-pills">
+                <span class="tela-pill">✓ Sem telas de espera</span>
+                <span class="tela-pill">✓ Consentimento auditável</span>
+                <span class="tela-pill">✓ Liberação em 2s</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tela 2: Internet Liberada & Filtro de Frotas/CNPJ -->
+          <div class="tela-mobile-card">
+            <div class="phone-mockup-frame">
+              <div class="phone-mockup-notch"></div>
+              <div class="phone-mockup-screen">
+                <img src="assets/tela-2-internet-liberada.png" alt="Tela 2 - Confirmação de internet liberada e captura opcional de CNPJ para frotas" loading="lazy">
+              </div>
+            </div>
+            <div class="tela-info">
+              <span class="tela-tag-passo">Passo 02 // Engajamento</span>
+              <h3 class="tela-titulo">2. Internet Liberada & Leads</h3>
+              <p class="tela-texto">
+                Confirmação imediata com incentivo para salvar o WhatsApp do estabelecimento e canal exclusivo para empresas, frotas e MEIs informarem o CNPJ para condições comerciais.
+              </p>
+              <div class="tela-pills">
+                <span class="tela-pill">✓ Navegação instantânea</span>
+                <span class="tela-pill">✓ Canal WhatsApp</span>
+                <span class="tela-pill">✓ Filtro B2B estratégico</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tela 3: CNPJ Recebido & Confirmação Comercial -->
+          <div class="tela-mobile-card">
+            <div class="phone-mockup-frame">
+              <div class="phone-mockup-notch"></div>
+              <div class="phone-mockup-screen">
+                <img src="assets/tela-3-cnpj-recebido.png" alt="Tela 3 - CNPJ recebido com sucesso e aviso de retorno comercial" loading="lazy">
+              </div>
+            </div>
+            <div class="tela-info">
+              <span class="tela-tag-passo">Passo 03 // Qualificação</span>
+              <h3 class="tela-titulo">3. CNPJ Recebido</h3>
+              <p class="tela-texto">
+                Exclusivo para quem informa dados empresariais. Confirma que a equipe comercial entrará em contato com proposta sob medida e dispara o motor de enriquecimento automático.
+              </p>
+              <div class="tela-pills">
+                <span class="tela-pill">✓ Lead qualificado</span>
+                <span class="tela-pill">✓ Gatilho de enriquecimento</span>
+                <span class="tela-pill">✓ Disparo ao comercial</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CARD DE CONEXÃO INTELIGENTE: ENRIQUECIMENTO DE DADOS & WHATSAPP COMERCIAL -->
+        <div class="fluxo-bridge-container">
+          
+          <div class="bridge-col-info">
+            <span class="badge badge-primaria" style="margin-bottom:10px;">Tratamento Automatizado de Dados</span>
+            <h3>Lead Qualificado com Dados da Receita Federal</h3>
+            <p>
+              Quando o visitante digita o CNPJ, consultamos a Receita Federal em tempo real. Em segundos, um simples número se transforma em uma ficha completa com nome, cargo e potencial de compra para o seu time comercial.
+            </p>
+            <ul class="bridge-features-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Razão Social, Nome Fantasia e Data de Abertura
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Atividade Econômica Principal (CNAE de Transporte/Comércio)
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Quadro de Sócios e Administradores (QSA)
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Situação Cadastral Ativa e Endereço Sede
+              </li>
+            </ul>
+          </div>
+
+          <div class="bridge-divisor-animado">
+            <div class="bridge-raio-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <span class="mono" style="font-size:0.7rem; font-weight:700; color:#334155; text-align:center;">DISPARO EM 3s</span>
+          </div>
+
+          <!-- Mockup do Alerta Recebido no WhatsApp do Time Comercial -->
+          <div class="whatsapp-lead-mock">
+            <div class="whatsapp-mock-header">
+              <div class="wa-avatar">MP</div>
+              <div>
+                <div class="wa-name">Malha Bot // Alerta Comercial</div>
+                <div class="wa-status">online · notificação automática</div>
+              </div>
+            </div>
+            <div class="whatsapp-mock-body">
+              <div class="whatsapp-mock-bubble">
+                <span class="wa-badge-urgente">🔥 NOVO LEAD B2B CAPTURADO</span>
+                <p style="margin-bottom:6px;"><strong>Oportunidade de Cartão Frota / Contrato!</strong> Um visitante acabou de cadastrar CNPJ no Wi-Fi da <em>Unidade Centro</em>:</p>
+                
+                <div class="wa-lead-dados">
+                  <strong>Contato:</strong> Carlos Eduardo (Motorista/Gestor)<br>
+                  <strong>WhatsApp:</strong> (47) 99876-5432<br>
+                  <strong>Empresa:</strong> TransLog Sul Transportes Eireli<br>
+                  <strong>CNPJ:</strong> 28.910.456/0001-32<br>
+                  <strong>Atividade:</strong> 49.30-2-02 - Transporte Rodoviário de Cargas<br>
+                  <strong>Potencial:</strong> Frota própria com 8 veículos
+                </div>
+
+                <p style="font-size:0.75rem; color:#065f46; margin:4px 0 0; font-weight:600;">
+                  ✓ Consentimento LGPD validado às 14:22<br>
+                  ✓ Dados públicos enriquecidos com sucesso
+                </p>
+                <div class="wa-time">14:22 · Entregue ✓✓</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Cabeçalho de Introdução ao Dashboard -->
+        <div class="secao-topo centralizado" style="margin-top: 56px; margin-bottom: 28px;">
+          <h2><span class="gradiente-texto-solar">Do Wi-Fi ao Caixa da Empresa:</span></h2>
+          <p>Acompanhe em tempo real quantos leads foram captados, qual o volume de faturamento gerado e como o seu investimento no Guest Portal se paga.</p>
+        </div>
+
+        <!-- PAINEL EXECUTIVO: RETORNO DO COMERCIAL (DASHBOARD REDESENHADO) -->
+        <div class="painel-retorno-wrapper">
+          <div class="painel-retorno-header">
+            <div>
+              <h3>Resultados Reais do Funil</h3>
+              <p style="font-size:0.85rem; color:var(--cor-texto-secundario); margin:0;">
+                Acompanhe a jornada do lead captado no Wi-Fi até a venda final. Transparência total do seu esforço de marketing em faturamento.
+              </p>
+            </div>
+            <div class="painel-retorno-sync">
+              <span class="sync-dot"></span>
+              <span>ERP atualizado hoje às 14:00 (sincronizado a cada 2 h)</span>
+            </div>
+          </div>
+
+          <div class="painel-retorno-body">
+            
+            <!-- Linha 1: 5 KPIs Principais -->
+            <div class="painel-kpis-grid">
+              
+              <div class="kpi-box">
+                <div class="kpi-box-num">137</div>
+                <div class="kpi-box-label">Leads enviados</div>
+              </div>
+
+              <div class="kpi-box">
+                <div class="kpi-box-num">120</div>
+                <div class="kpi-box-label">Contatados</div>
+              </div>
+
+              <div class="kpi-box" style="border-color:#d8b4fe; background:#faf5ff;">
+                <div class="kpi-box-num" style="color:#6b21a8;">30</div>
+                <div class="kpi-box-label" style="color:#6b21a8; font-weight:700;">Contratos Fechados</div>
+              </div>
+
+              <div class="kpi-box">
+                <div class="kpi-box-num">15</div>
+                <div class="kpi-box-label">Leads no ERP</div>
+              </div>
+
+              <div class="kpi-box">
+                <div class="kpi-box-num">10</div>
+                <div class="kpi-box-label">Novos Clientes</div>
+              </div>
+
+            </div>
+
+            <!-- Linha 2: Faturamento & Base Ativa -->
+            <div class="painel-kpis-row2">
+              
+              <div class="kpi-box-faturamento">
+                <div>
+                  <div class="fat-label">Faturamento dos novos clientes</div>
+                  <div class="fat-num">R$ 24.063,91</div>
+                  <span style="font-size:0.76rem; color:#7e22ce; font-weight:600;">Receita gerada comprovada via integração direta com ERP</span>
+                </div>
+                <div style="background:#7c3aed; padding:10px 16px; border-radius:12px; font-weight:800; color:#ffffff; font-size:1.1rem; box-shadow:0 4px 14px rgba(124, 58, 237, 0.35);">
+                  +100% ROI
+                </div>
+              </div>
+
+              <div class="kpi-box" style="display:flex; flex-direction:column; justify-content:center; text-align:left; padding:18px 22px; background:#fdf4ff; border-color:#f0abfc;">
+                <div style="display:flex; align-items:baseline; gap:10px;">
+                  <span class="kpi-box-num" style="font-size:2rem; margin:0; color:#581c87;">1</span>
+                  <span style="font-weight:700; color:#4a044e; font-size:0.9rem;">Cliente Reativado</span>
+                </div>
+                <div class="kpi-box-label" style="margin-top:4px; color:#701a75;">Comprou novamente após a campanha</div>
+              </div>
+
+            </div>
+
+            <!-- Filtros Interativos do Funil Comercial -->
+            <div class="painel-funil-bar">
+              <span style="font-size:0.8rem; font-weight:700; color:var(--cor-texto-secundario); display:flex; align-items:center; margin-right:8px;">Funil de Vendas:</span>
+              <button type="button" class="funil-pill">Todos (137)</button>
+              <button type="button" class="funil-pill pill-secundaria">Não contatado (17)</button>
+              <button type="button" class="funil-pill pill-secundaria">Contatado (13)</button>
+              <button type="button" class="funil-pill pill-cinza" style="color: #ffffff !important;">Proposta enviada (0)</button>
+              <button type="button" class="funil-pill pill-verde">✓ Fechou (30)</button>
+              <button type="button" class="funil-pill pill-neutra">Sem interesse (77)</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         ESPECIFICAÇÕES DO PRODUTO & INTEGRAÇÃO MIKROTIK
+         ========================================================================= -->
+    <section id="produtos" style="padding-top:20px;">
+      <div class="container">
+        <div class="product-showcase-card">
+          <div class="product-showcase-mock">
+            <div class="mock-bar">
+              <span></span><span></span><span></span>
+              <span class="mock-bar-title mono">guestportal.malha // software oficial de captação</span>
+              <span style="margin-left:auto; font-size:0.72rem; font-weight:700; background:var(--cor-primaria); color:#ffffff; padding:3px 10px; border-radius:9999px;">★ PRODUTO PRINCIPAL</span>
+            </div>
+            <img src="assets/guestportal-painel-retorno.png" alt="Painel analítico do Guest Portal e Retorno Comercial integrado ao ERP" loading="lazy">
+          </div>
+
+          <div class="product-showcase-body">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+              <span class="badge badge-primaria">Tecnologia Malha</span>
+              <span class="badge" style="background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0; font-weight:700;">✓ 100% Conforme LGPD</span>
+            </div>
+            <h3 style="font-size:1.8rem; margin-bottom:6px;">Guest Portal & Wi-Fi Analytics</h3>
+            <div class="tagline" style="font-size:0.95rem; color:var(--cor-primaria); font-weight:700; margin-bottom:14px;">// Da conexão do visitante ao faturamento no ERP</div>
+            <p class="desc" style="font-size:0.95rem; line-height:1.6; color:var(--cor-texto-secundario); margin-bottom:18px;">
+              Conecte visitantes, colete dados valiosos e transforme o Wi-Fi do seu estabelecimento em uma máquina de gerar negócios. Libere o acesso em menos de 2 segundos, identifique oportunidades B2B em tempo real e entregue leads quentes direto no WhatsApp dos seus vendedores.
+            </p>
+
+            <div class="showcase-features-grid">
+              <div class="feat-box">
+                <strong>Conexão Instantânea (Zero Fricção)</strong>
+                <span>Liberação de acesso em menos de 2 segundos, sem travar o celular do cliente e sem burocracia.</span>
+              </div>
+              <div class="feat-box">
+                <strong>Privacidade Garantida (LGPD)</strong>
+                <span>Coleta de dados 100% transparente e dentro das normas legais, garantindo a segurança do seu negócio e do cliente.</span>
+              </div>
+              <div class="feat-box">
+                <strong>Qualificação B2B Automática</strong>
+                <span>Ao digitar o CNPJ, o sistema consulta a Receita Federal e preenche os dados da empresa (Razão Social, CNAE, Sócios) na hora.</span>
+              </div>
+              <div class="feat-box">
+                <strong>Leads Direto no WhatsApp</strong>
+                <span>Notificação em tempo real para os vendedores, permitindo que abordem o cliente enquanto ele ainda está na sua empresa.</span>
+              </div>
+              <div class="feat-box">
+                <strong>Integração com seu ERP <span style="font-size:0.72rem; font-weight:700; color:#c2410c; background:#fff7ed; border:1px solid #fed7aa; padding:2px 8px; border-radius:10px; margin-left:6px; vertical-align:middle;">Sob Consulta</span></strong>
+                <span>Acompanhe o faturamento real em tempo real. (Sob consulta: verifique a viabilidade técnica para o seu sistema).</span>
+              </div>
+              <div class="feat-box">
+                <strong>Segmentação de Público</strong>
+                <span>Classificação automática de visitantes em: clientes fiéis, recorrentes, novos ou apenas turistas.</span>
+              </div>
+            </div>
+
+            <div class="product-showcase-footer">
+              <div class="price-box">
+                <span style="font-size:0.8rem; color:var(--cor-texto-secundario); display:block;">Licenciamento & Implantação:</span>
+                <span class="price-val" style="font-size:1.3rem; font-weight:800; color:var(--cor-primaria);">Solução Sob Medida por Filial</span>
+              </div>
+              <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+                <a href="planos.html" class="btn btn-primary">Ver Todos os Planos</a>
+                <button type="button" class="btn btn-primary btn-solar btn-abrir-modal-diagnostico">Solicitar Demonstração Gratuita</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- =========================================================================
+         CHAMADA FINAL PARA DIAGNÓSTICO (DARK NAVY THEME)
+         ========================================================================= -->
+    <section class="final-cta" id="contato" style="background-color: #081628 !important; color: #ffffff !important; border-top: 1px solid rgba(255, 255, 255, 0.08) !important;">
+      <div class="container">
+        <h2 style="color: #ffffff !important;">Pronto para transformar sua operação em máquina de vendas?</h2>
+        <p style="color: #cbd5e1 !important;">15 minutos de diagnóstico comercial direto ao ponto. Sem compromisso, sem enrolação.</p>
+        <div class="final-ctas" style="display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap;">
+          <a href="mailto:contato@malha.dev.br" class="btn btn-primary btn-lg">
+            Solicitar Proposta
+          </a>
+          <button type="button" class="btn btn-primary btn-solar btn-lg btn-abrir-modal-diagnostico">
+            Falar com Especialista
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       BOTÕES FLUTUANTES DE AÇÃO RÁPIDA (DELL STYLE)
+       ========================================================================= -->
+  <aside class="botoes-flutuantes" aria-label="Ações rápidas flutuantes">
+    <a href="index.html#assistente" class="btn-flutuante destaque-dell-ai">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"/>
+      </svg>
+      <span>Assistente virtual</span>
+    </a>
+    <a href="contato.html" class="btn-flutuante destaque-dell-blue">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 18v-6a9 9 0 0118 0v6"/>
+        <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/>
+      </svg>
+      <span>Fale conosco</span>
+    </a>
+  </aside>
+
+    <!-- =========================================================================
+       RODAPÉ DA PÁGINA (DARK NAVY THEME)
+       ========================================================================= -->
+  <footer class="site-footer" style="background-color: #081628 !important; color: #ffffff !important; border-top: 1px solid rgba(255, 255, 255, 0.08) !important;">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="site-logo" style="margin-bottom: 14px;">
+            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2L17.5 10.5L26 14L17.5 17.5L14 26L10.5 17.5L2 14L10.5 10.5L14 2Z" fill="#1d68ff" />
+              <circle cx="14" cy="14" r="3.2" fill="#ffffff" />
+            </svg>
+            <span style="color: #ffffff !important;">Malha</span>
+          </div>
+          <p style="font-size: 0.92rem; max-width: 320px; color: #cbd5e1 !important; line-height: 1.55;">
+            Especialistas em Prospecção B2B via GuestPortal-WiFi e Desenvolvimento de Software Sob Medida. Transformamos sua rede e seus processos em máquinas de vendas, com IA e infraestrutura 100% gerenciada.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="color: #ffffff !important;">Produto</h4>
+          <ul>
+            <li><a href="produtos.html" style="color: #cbd5e1;">Guest Portal & Wi-Fi Analytics</a></li>
+            <li><a href="produtos.html#fluxo-guestportal" style="color: #cbd5e1;">Captura & Conformidade LGPD</a></li>
+            <li><a href="produtos.html#fluxo-guestportal" style="color: #cbd5e1;">Enriquecimento de CNPJ & Frotas</a></li>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Chatbots & Agentes de IA</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="color: #ffffff !important;">Serviços</h4>
+          <ul>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Desenvolvimento Sob Medida</a></li>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Automação com Agentes de IA</a></li>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Sites & Landing Pages</a></li>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Integrações & APIs via n8n</a></li>
+            <li><a href="servidores.html" style="color: #cbd5e1;">Infraestrutura Gerenciada</a></li>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Backup & Disaster Recovery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="color: #ffffff !important;">Empresa</h4>
+          <ul>
+            <li><a href="index.html#assistente" style="color: #cbd5e1;">Como Funciona</a></li>
+            <li><a href="galeria.html" style="color: #cbd5e1;">Galeria 3D</a></li>
+            <li><a href="planos.html" style="color: #cbd5e1;">Planos e Preços</a></li>
+            <li><a href="contato.html" style="color: #cbd5e1;">Contato & Diagnóstico</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom" style="border-top: 1px solid rgba(255, 255, 255, 0.08) !important; color: #94a3b8 !important;">
+        <span>© 2026 Malha Tecnologia. Todos os direitos reservados.</span>
+        <span style="display: inline-flex; align-items: center; gap: 8px;">
+          <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: #10b981; box-shadow: 0 0 8px #10b981;"></span>
+          Status: 100% Operacional
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODAL DE DIAGNÓSTICO TÉCNICO
+       ========================================================================= -->
+  <div class="modal-diagnostico-backdrop" id="modal-diagnostico" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <div class="modal-diagnostico-conteudo">
+      <button type="button" class="modal-btn-fechar" id="modal-fechar-btn" aria-label="Fechar janela de diagnóstico">✕</button>
+
+      <div class="modal-cabecalho">
+        <span class="modal-badge-topo">Avaliação Técnica Gratuita · 15 Minutos</span>
+        <h3 id="modal-titulo" class="modal-titulo">Agendar Diagnóstico de Infraestrutura</h3>
+        <p class="modal-subtitulo">
+          Avaliação técnica direta ao ponto. Identificamos gargalos na sua rede, riscos de queda e potencial de captura de clientes no Wi-Fi.
+        </p>
+      </div>
+
+      <div class="form-mensagem-erro" id="diagnostico-erro" role="alert"></div>
+
+      <form id="form-diagnostico" action="https://formsubmit.co/contato@malha.dev.br" method="POST" target="iframe-envio-silencioso" novalidate>
+        <input type="hidden" name="_subject" value="Novo Agendamento de Diagnostico Tecnico - Malha">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="form-grupo">
+          <label for="diagnostico-nome" class="form-label">Seu Nome Completo *</label>
+          <input type="text" id="diagnostico-nome" name="Nome" class="form-input" placeholder="Ex: Carlos Silva" required autocomplete="name">
+        </div>
+
+        <div class="form-dica-contato">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <span>Pelo menos <strong>um meio de contato</strong> (E-mail ou Telefone/WhatsApp) deve ser preenchido.</span>
+        </div>
+
+        <div class="form-grupo">
+          <label for="diagnostico-email" class="form-label">E-mail <span class="opcional">(obrigatório se não preencher telefone)</span></label>
+          <input type="email" id="diagnostico-email" name="Email" class="form-input" placeholder="exemplo@suaempresa.com.br" autocomplete="email">
+        </div>
+
+        <div class="form-grupo">
+          <label for="diagnostico-telefone" class="form-label">Telefone / WhatsApp <span class="opcional">(obrigatório se não preencher e-mail)</span></label>
+          <input type="tel" id="diagnostico-telefone" name="Telefone_WhatsApp" class="form-input" placeholder="(11) 99999-9999" autocomplete="tel">
+        </div>
+
+        <div class="form-grupo">
+          <label for="diagnostico-mensagem" class="form-label">Informações Adicionais <span class="opcional">(opcional)</span></label>
+          <textarea id="diagnostico-mensagem" name="Mensagem_Observacoes" class="form-textarea" rows="3" placeholder="Quantidade de filiais, tipo de roteador ou principal desafio de infraestrutura..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-solar btn-lg" style="width: 100%; margin-top: 8px;">
+          Confirmar Agendamento de Diagnóstico
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+
+      <iframe name="iframe-envio-silencioso" id="iframe-envio-silencioso" style="display:none; width:0; height:0; border:none;"></iframe>
+
+      <div class="form-mensagem-sucesso" id="diagnostico-sucesso">
+        <div style="font-size: 2.5rem; margin-bottom: 8px; color: var(--cor-destaque-verde);">✓</div>
+        <h4>Diagnóstico Solicitado com Sucesso!</h4>
+        <p>Recebemos suas informações. Os dados foram salvos no registro e enviados para nossa equipe técnica em <strong>contato@malha.dev.br</strong>.</p>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 18px;">
+          <a href="#" id="diagnostico-link-email-contingencia" class="btn btn-secondary" style="font-size: 0.88rem;">
+            ✉️ Enviar cópia pelo meu aplicativo de E-mail
+          </a>
+          <button type="button" class="btn btn-primary" id="diagnostico-fechar-sucesso" style="width: 100%;">
+            Concluir e Fechar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts Interativos -->
+  <script src="js/main.js"></script>
+</body>
+</html>

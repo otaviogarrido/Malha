@@ -1,0 +1,3 @@
+# Cloudflare Pages Redirects
+/guestportal         /produtos.html         301
+/guestportal.html    /produtos.html         301

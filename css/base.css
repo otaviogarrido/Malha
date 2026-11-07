@@ -1,0 +1,173 @@
+/* ==========================================================================
+   MALHA - ESTILOS BASE, RESET E TIPOGRAFIA (TEMA SAAS MODERNO)
+   ========================================================================== */
+
+/* --- Reset Moderno --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--cor-fundo-principal);
+  color: var(--cor-texto-principal);
+  font-family: var(--fonte-corpo);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Fundo com atmosfera SaaS e iluminação suave de cantos */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 95% 5%, rgba(29, 104, 255, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 5% 95%, rgba(139, 92, 246, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(0, 180, 216, 0.03) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Tipografia Fluida e Moderna --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fonte-titulos);
+  color: var(--cor-texto-principal);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 4.8vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: var(--cor-texto-principal);
+}
+
+h1 strong, h1 b {
+  font-weight: 800;
+  color: var(--cor-primaria);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--cor-texto-principal);
+}
+
+h2 strong, h2 b {
+  font-weight: 800;
+  color: var(--cor-primaria);
+}
+
+h3 {
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-weight: 600;
+  color: var(--cor-texto-principal);
+}
+
+h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--cor-texto-principal);
+}
+
+p {
+  color: var(--cor-texto-secundario);
+  font-size: 1rem;
+}
+
+p.lead {
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  line-height: 1.65;
+  color: var(--cor-texto-secundario);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all var(--transicao-rapida);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* Seleção de texto limpa */
+::selection {
+  background-color: var(--cor-primaria-clara);
+  color: var(--cor-primaria);
+}
+
+/* --- Utilitários de Texto e Estilo --- */
+.mono {
+  font-family: var(--fonte-codigo);
+}
+
+.acento-ciano {
+  color: var(--cor-ciano);
+}
+
+.acento-azul {
+  color: var(--cor-primaria);
+}
+
+.acento-ambar {
+  color: var(--cor-laranja);
+}
+
+.texto-centro {
+  text-align: center;
+}
+
+.gradiente-texto {
+  background: linear-gradient(135deg, #1d68ff 0%, #00b4d8 60%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.gradiente-texto-solar {
+  background: linear-gradient(135deg, #e11d48 0%, #ff4500 48%, #ff8c00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline;
+}
+
+/* Acessibilidade: Redução de movimento para usuários sensíveis */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

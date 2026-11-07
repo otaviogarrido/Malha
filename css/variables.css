@@ -1,0 +1,130 @@
+/* ==========================================================================
+   MALHA - SISTEMA DE DESIGN & VARIÁVEIS CSS (TEMA SAAS MODERNO)
+   Inspirado no modelo de dashboard clean:
+   Fundo off-white/azul suave, cards brancos, azul elétrico, ciano, verde, coral e roxo.
+   ========================================================================== */
+
+:root {
+  /* --- Cores Fundamentais do Canvas & Superfícies --- */
+  --cor-fundo-principal: #f4f7fe;
+  --cor-fundo-secundario: #eef2f9;
+  --cor-fundo-card: #ffffff;
+  --cor-fundo-elevado: #ffffff;
+  --cor-fundo-hover: #f8fafd;
+  --cor-fundo-escuro: #0c1322;
+  --cor-fundo-terminal: #090e17;
+
+  /* --- Cores de Marca & Destaque (Inspiradas no Template) --- */
+  --cor-primaria: #1d68ff;
+  --cor-primaria-hover: #1453d4;
+  --cor-primaria-clara: #eaf2ff;
+  --cor-primaria-glow: rgba(29, 104, 255, 0.28);
+
+  /* Ciano / Azul Claro (Gráficos e Indicadores) */
+  --cor-ciano: #00b4d8;
+  --cor-ciano-claro: #e0f7fc;
+  --cor-ciano-hover: #0096c7;
+
+  /* Verde (Métricas Positivas e Sucesso) */
+  --cor-verde: #10b981;
+  --cor-verde-vibrante: #22c55e;
+  --cor-verde-fundo: #ecfdf5;
+  --cor-verde-texto: #047857;
+
+  /* Laranja / Coral (Alertas e Destaques Negativos) */
+  --cor-laranja: #f97316;
+  --cor-laranja-fundo: #fff7ed;
+  --cor-laranja-texto: #c2410c;
+  --cor-vermelho: #ef4444;
+  --cor-vermelho-fundo: #fef2f2;
+
+  /* Roxo / Violeta (Inteligência & Segmentos) */
+  --cor-roxo: #8b5cf6;
+  --cor-roxo-fundo: #f5f3ff;
+  --cor-roxo-texto: #6d28d9;
+
+  /* --- Gradientes Temáticos --- */
+  --gradiente-primario: linear-gradient(135deg, #1d68ff 0%, #38bdf8 100%);
+  --gradiente-roxo-azul: linear-gradient(135deg, #1d68ff 0%, #8b5cf6 100%);
+  --gradiente-ai: linear-gradient(135deg, #1d68ff 0%, #8b5cf6 50%, #ec4899 100%);
+  --gradiente-card: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+
+  /* --- Bordas e Divisores --- */
+  --cor-borda: #e8edf5;
+  --cor-borda-suave: #f1f5f9;
+  --cor-borda-foco: #1d68ff;
+  --cor-borda-escuro: #1e293b;
+
+  /* --- Textos e Contraste --- */
+  --cor-texto-principal: #0f172a;
+  --cor-texto-secundario: #475569;
+  --cor-texto-mutado: #94a3b8;
+  --cor-texto-claro: #ffffff;
+  --cor-texto-escuro: #0f172a;
+
+  /* --- Tipografia Oficial (Plus Jakarta Sans & Roboto Mono) --- */
+  --fonte-titulos: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --fonte-corpo: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --fonte-codigo: 'Roboto Mono', 'Cascadia Code', 'Consolas', monospace;
+
+  /* --- Espaçamento Modular --- */
+  --espaco-2xs: 4px;
+  --espaco-xs: 8px;
+  --espaco-sm: 12px;
+  --espaco-md: 16px;
+  --espaco-lg: 24px;
+  --espaco-xl: 32px;
+  --espaco-2xl: 48px;
+  --espaco-3xl: 64px;
+  --espaco-4xl: 96px;
+
+  /* --- Raios de Borda Modernos e Arredondados --- */
+  --raio-sm: 8px;
+  --raio-md: 12px;
+  --raio-lg: 16px;
+  --raio-xl: 20px;
+  --raio-2xl: 24px;
+  --raio-pilula: 9999px;
+
+  /* --- Sombras Multinível Suaves (SaaS Style) --- */
+  --sombra-card: 0 4px 20px -2px rgba(112, 144, 176, 0.08), 0 2px 6px rgba(112, 144, 176, 0.04);
+  --sombra-card-hover: 0 16px 36px -4px rgba(112, 144, 176, 0.16), 0 4px 12px rgba(112, 144, 176, 0.06);
+  --sombra-primaria: 0 4px 14px 0 rgba(29, 104, 255, 0.35);
+  --sombra-primaria-hover: 0 8px 24px 0 rgba(29, 104, 255, 0.45);
+  --sombra-header: 0 4px 20px -4px rgba(112, 144, 176, 0.08);
+  --sombra-modal: 0 25px 60px -15px rgba(15, 23, 42, 0.25);
+
+  /* --- Transições Suaves & Easing Dinâmico --- */
+  --transicao-rapida: 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  --transicao-padrao: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transicao-suave: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* --- Z-Index --- */
+  --z-base: 1;
+  --z-elevado: 10;
+  --z-sticky: 100;
+  --z-modal: 500;
+  --z-notificacao: 1000;
+
+  /* --- Largura Máxima --- */
+  --largura-maxima: 1240px;
+  --largura-estreita: 820px;
+
+  /* --- Variáveis de Compatibilidade com Código Anterior --- */
+  --cor-azul-dell: var(--cor-primaria);
+  --cor-azul-dell-hover: var(--cor-primaria-hover);
+  --cor-azul-dell-claro: var(--cor-ciano);
+  --cor-bordo-dell: var(--cor-roxo);
+  --cor-bordo-vibrante: var(--cor-laranja);
+  --cor-bordo-fundo: var(--cor-roxo-fundo);
+  --cor-destaque-ciano: var(--cor-primaria);
+  --cor-destaque-ciano-brilho: var(--cor-primaria-glow);
+  --cor-destaque-ciano-fundo: var(--cor-primaria-clara);
+  --cor-destaque-azul: #38bdf8;
+  --cor-destaque-ambar: var(--cor-laranja);
+  --cor-destaque-ambar-fundo: var(--cor-laranja-fundo);
+  --cor-destaque-verde: var(--cor-verde);
+  --cor-destaque-verde-fundo: var(--cor-verde-fundo);
+  --cor-destaque-vermelho: var(--cor-vermelho);
+  --cor-destaque-roxo: var(--cor-roxo);
+}

@@ -1,0 +1,647 @@
+/* ==========================================================================
+   MALHA - LAYOUT ESTRUTURAL & NAVEGAÇÃO (TEMA SAAS MODERNO)
+   ========================================================================== */
+
+/* --- Container Responsivo --- */
+.container, .wrap {
+  width: 100%;
+  max-width: var(--largura-maxima);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  position: relative;
+  z-index: var(--z-base);
+}
+
+@media (max-width: 640px) {
+  .container, .wrap {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* --- Cabeçalho Fixo com Efeito Vidro Claro (Glassmorphism SaaS) --- */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--cor-borda);
+  z-index: var(--z-sticky);
+  transition: background-color var(--transicao-padrao), box-shadow var(--transicao-padrao);
+}
+
+.site-header.rolado {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--sombra-header);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  gap: var(--espaco-lg);
+}
+
+.header-lado-esquerdo {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+  max-width: 680px;
+}
+
+/* Logotipo */
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--fonte-titulos);
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--cor-texto-principal);
+  letter-spacing: -0.025em;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.site-logo svg {
+  width: 28px;
+  height: 28px;
+  transition: transform var(--transicao-padrao);
+}
+
+.site-logo:hover svg {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* Caixa de Pesquisa no Cabeçalho (Estilo Dell) */
+.header-busca-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 440px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 9999px;
+  padding: 3px 6px 3px 14px;
+  transition: all var(--transicao-rapida);
+}
+
+.header-busca-box:focus-within {
+  background: #ffffff;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.header-busca-icone {
+  width: 17px;
+  height: 17px;
+  color: #64748b;
+  flex-shrink: 0;
+  margin-right: 8px;
+}
+
+.header-busca-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 0.88rem;
+  color: var(--cor-texto-principal);
+  padding: 6px 0;
+  font-family: inherit;
+}
+
+.header-busca-input::placeholder {
+  color: #94a3b8;
+}
+
+.header-busca-btn {
+  background: var(--cor-primaria);
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transicao-rapida), transform var(--transicao-rapida);
+  flex-shrink: 0;
+}
+
+.header-busca-btn:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+/* Dropdown de Resultados da Pesquisa */
+.header-busca-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid var(--cor-borda);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  z-index: var(--z-modal);
+  list-style: none;
+}
+
+.header-busca-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--cor-texto-principal);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+
+.header-busca-item:hover {
+  background: #eff6ff;
+  color: var(--cor-primaria);
+}
+
+/* Links de Navegação Desktop (Legado / Opcional) */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--cor-texto-secundario);
+  padding: 8px 14px;
+  border-radius: var(--raio-md);
+  position: relative;
+  transition: all var(--transicao-rapida);
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--cor-primaria);
+  background-color: var(--cor-primaria-clara);
+}
+
+/* Área de Ações do Cabeçalho */
+.nav-acoes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.header-btn-sobre {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--cor-primaria);
+  padding: 5px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all var(--transicao-rapida);
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(29, 104, 255, 0.25);
+}
+
+.header-btn-sobre:hover {
+  background-color: var(--cor-primaria-escura);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(29, 104, 255, 0.35);
+}
+
+@media (max-width: 860px) {
+  .header-busca-box {
+    display: none;
+  }
+  .header-btn-sobre {
+    display: none;
+  }
+}
+
+/* Botão de Menu Mobile (Hambúrguer) */
+.botao-menu-mobile {
+  display: none;
+  background: #ffffff;
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto-principal);
+  padding: 10px;
+  border-radius: var(--raio-md);
+  cursor: pointer;
+  z-index: var(--z-modal);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: all var(--transicao-rapida);
+}
+
+.botao-menu-mobile:hover {
+  border-color: var(--cor-primaria);
+  color: var(--cor-primaria);
+  background-color: var(--cor-primaria-clara);
+}
+
+.icone-hamburguer {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+}
+
+/* Drawer / Menu Lateral Mobile */
+.menu-mobile-gaveta {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 82%;
+  max-width: 340px;
+  height: 100vh;
+  background-color: #ffffff;
+  border-left: 1px solid var(--cor-borda);
+  padding: 88px 24px 32px;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: var(--z-modal);
+  box-shadow: -10px 0 40px rgba(15, 23, 42, 0.12);
+  transition: right var(--transicao-suave);
+  overflow-y: auto;
+}
+
+.menu-mobile-gaveta.ativo {
+  right: 0;
+}
+
+.menu-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.menu-mobile-links a {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--cor-texto-secundario);
+  padding: 12px 16px;
+  border-radius: var(--raio-md);
+  transition: all var(--transicao-rapida);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-mobile-links a:hover,
+.menu-mobile-links a:active {
+  background-color: var(--cor-primaria-clara);
+  color: var(--cor-primaria);
+}
+
+.menu-mobile-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: calc(var(--z-modal) - 1);
+  opacity: 0;
+  transition: opacity var(--transicao-padrao);
+}
+
+.menu-mobile-backdrop.ativo {
+  display: block;
+  opacity: 1;
+}
+
+/* --- Estrutura de Seções --- */
+section {
+  padding: var(--espaco-4xl) 0;
+  position: relative;
+  z-index: var(--z-base);
+}
+
+.secao-topo {
+  max-width: 720px;
+  margin-bottom: var(--espaco-3xl);
+}
+
+.secao-topo.centralizado {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.secao-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--fonte-titulos);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--espaco-sm);
+  background-color: var(--cor-primaria-clara);
+  border: 1px solid rgba(29, 104, 255, 0.2);
+  padding: 6px 14px;
+  border-radius: var(--raio-pilula);
+}
+
+.secao-tag.tag-ciano {
+  color: var(--cor-ciano);
+  background-color: var(--cor-ciano-claro);
+  border-color: rgba(0, 180, 216, 0.25);
+}
+
+.secao-tag.secao-tag-solar,
+.secao-tag.tag-solar {
+  color: #ffffff;
+  background: linear-gradient(135deg, #e11d48 0%, #ff4500 48%, #ff8c00 100%);
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(255, 69, 0, 0.28);
+}
+
+.secao-topo h2 {
+  margin-bottom: var(--espaco-md);
+}
+
+/* --- Rodapé da Página Dark Navy Integrado (#081628) --- */
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #081628;
+  color: #ffffff;
+  padding: var(--espaco-4xl) 0 var(--espaco-xl);
+  position: relative;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: var(--espaco-3xl);
+  margin-bottom: var(--espaco-3xl);
+}
+
+.footer-col .site-logo span {
+  color: #ffffff;
+}
+
+.footer-col p {
+  color: #cbd5e1 !important;
+}
+
+.footer-col h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: var(--espaco-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col a {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  transition: color var(--transicao-rapida), transform var(--transicao-rapida);
+  display: inline-block;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: #38bdf8;
+  transform: translateX(3px);
+}
+
+.footer-bottom {
+  padding-top: var(--espaco-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: #94a3b8;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ==========================================================================
+   FAIXA SUPERIOR AZUL ESCURO (ESTILO DELL) COM GUIAS / PILLS DE NAVEGAÇÃO
+   ========================================================================== */
+.nav-faixa-superior {
+  background-color: #081628;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 10px 0;
+  position: relative;
+  z-index: calc(var(--z-sticky) - 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.nav-faixa-superior .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.nav-faixa-pills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 4px 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  list-style: none;
+  margin: 0 auto;
+  min-width: 0;
+}
+
+.nav-faixa-pills::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-pill:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.nav-pill.active {
+  background: #ffffff;
+  color: #081628;
+  border-color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.nav-pill.active:hover {
+  transform: none;
+  background: #ffffff;
+  color: #081628;
+}
+
+.nav-faixa-auxiliar {
+  display: none !important;
+}
+
+.nav-faixa-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-faixa-badge::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+/* Banner de Categoria Estilo Dell (Dark Navy com grafismos) */
+.secao-banner-dell {
+  background-color: #081628;
+  color: #ffffff;
+  padding: 56px 0 52px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.secao-banner-dell::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 100%;
+  background: repeating-linear-gradient(45deg, rgba(0, 192, 243, 0.3), rgba(0, 192, 243, 0.3) 4px, transparent 4px, transparent 12px);
+  mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  pointer-events: none;
+}
+
+.secao-banner-dell::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 160px;
+  height: 100%;
+  background: repeating-linear-gradient(-45deg, rgba(0, 192, 243, 0.3), rgba(0, 192, 243, 0.3) 4px, transparent 4px, transparent 12px);
+  mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  pointer-events: none;
+}
+
+.banner-dell-conteudo {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+}
+
+.banner-dell-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 12px;
+}
+
+.banner-dell-titulo {
+  font-family: var(--fonte-titulos);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+}
+
+.banner-dell-subtitulo {
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin-bottom: 24px;
+  max-width: 720px;
+}
+
+.banner-dell-acoes {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.banner-dell-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #38bdf8;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.banner-dell-link:hover {
+  color: #7dd3fc;
+  transform: translateX(3px);
+}

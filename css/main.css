@@ -1,0 +1,10 @@
+/* ==========================================================================
+   MALHA - FOLHA DE ESTILOS PRINCIPAL (MAIN.CSS)
+   Reúne todos os módulos organizados da arquitetura CSS.
+   ========================================================================== */
+
+@import url('variables.css');
+@import url('base.css');
+@import url('layout.css?v=16');
+@import url('components.css?v=16');
+@import url('responsive.css?v=16');

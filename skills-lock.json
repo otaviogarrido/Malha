@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "daisyui": {
+      "source": "saadeghi/daisyui",
+      "sourceType": "github",
+      "skillPath": "skills/daisyui/SKILL.md",
+      "computedHash": "51be9420b195cc8935591595c315d5bca38f889f3750942d816134bd70f72a6b"
+    },
+    "openrouter-typescript-sdk": {
+      "source": "OpenRouterTeam/skills",
+      "sourceType": "github",
+      "skillPath": "skills/openrouter-typescript-sdk/SKILL.md",
+      "computedHash": "29e53770fcca2658585fdeb33c5df41a042548a26d61af82afa42989f3ea99df"
+    }
+  }
+}

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sobre a Malha Tecnologia — Engenharia de redes corporativas, monitoramento em tempo real, inteligência de dados Wi-Fi e estabilidade de infraestrutura para operações distribuídas.">
+  <title>Sobre Nós — Malha Tecnologia</title>
+
+  <!-- Pré-conexão de Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Folha de Estilos Modular -->
+  <link rel="stylesheet" href="css/main.css?v=16">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. CABEÇALHO & NAVEGAÇÃO SUPERIOR
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <div class="header-lado-esquerdo">
+        <!-- Logotipo -->
+        <a href="index.html" class="site-logo" aria-label="Malha - Página Inicial">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2L17.5 10.5L26 14L17.5 17.5L14 26L10.5 17.5L2 14L10.5 10.5L14 2Z" fill="#1d68ff" />
+            <circle cx="14" cy="14" r="3.2" fill="#ffffff" />
+          </svg>
+          <span>Malha</span>
+        </a>
+
+        <!-- Caixa de Pesquisa no Cabeçalho (Estilo Dell) -->
+        <div class="header-busca-box">
+          <svg class="header-busca-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="text" 
+            class="header-busca-input" 
+            placeholder="O que você está procurando?" 
+            aria-label="Buscar produtos, serviços e soluções da Malha"
+          >
+          <button type="button" class="header-busca-btn" aria-label="Pesquisar">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+          <div class="header-busca-dropdown" style="display: none;"></div>
+        </div>
+      </div>
+
+      <!-- Ações do Cabeçalho: Sobre Nós e Fale Conosco -->
+      <div class="nav-acoes">
+        <a href="sobre.html" class="btn btn-primary btn-sm header-btn-sobre">Sobre Nós</a>
+        <a href="contato.html" class="btn btn-primary btn-solar btn-sm">Fale Conosco</a>
+        <button class="botao-menu-mobile" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <svg class="icone-hamburguer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6" stroke-linecap="round"></line>
+            <line x1="3" y1="12" x2="21" y2="12" stroke-linecap="round"></line>
+            <line x1="3" y1="18" x2="21" y2="18" stroke-linecap="round"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Gaveta do Menu Mobile -->
+  <div class="menu-mobile-backdrop"></div>
+  <aside class="menu-mobile-gaveta" aria-label="Menu móvel">
+    <ul class="menu-mobile-links">
+      <li><a href="index.html">Início <span>→</span></a></li>
+      <li><a href="produtos.html">Produtos & Guest Portal <span>→</span></a></li>
+      <li><a href="servicos.html">Serviços de TI <span>→</span></a></li>
+      <li><a href="servidores.html">Servidores Linux <span>→</span></a></li>
+      <li><a href="wifi.html">Wi-Fi UniFi <span>→</span></a></li>
+      <li><a href="galeria.html">Galeria 3D <span>→</span></a></li>
+      <li><a href="planos.html">Planos <span>→</span></a></li>
+      <li><a href="sobre.html" style="color:var(--cor-primaria); font-weight:700;">Sobre Nós <span>→</span></a></li>
+      <li><a href="contato.html">Contato <span>→</span></a></li>
+    </ul>
+    <div>
+      <a href="contato.html" class="btn btn-primary btn-solar" style="width: 100%;">Fale Conosco</a>
+      <p style="font-size: 0.8rem; text-align: center; margin-top: 16px; color: var(--cor-texto-mutado);">© 2026 Malha Tecnologia</p>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       FAIXA SUPERIOR AZUL ESCURO ESTILO DELL COM GUIAS / PILLS DE NAVEGAÇÃO
+       ========================================================================= -->
+  <div class="nav-faixa-superior" aria-label="Navegação por categorias e soluções">
+    <div class="container">
+      <ul class="nav-faixa-pills">
+        <li><a href="index.html" class="nav-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg> Início</a></li>
+        <li><a href="produtos.html" class="nav-pill">Produtos</a></li>
+        <li><a href="servicos.html" class="nav-pill">Serviços</a></li>
+        <li><a href="servidores.html" class="nav-pill">Servidores</a></li>
+        <li><a href="wifi.html" class="nav-pill">Wi-Fi UniFi</a></li>
+        <li><a href="galeria.html" class="nav-pill">Galeria 3D</a></li>
+        <li><a href="planos.html" class="nav-pill">Planos</a></li>
+        <li><a href="contato.html" class="nav-pill">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         BANNER HERO DE CATEGORIA ESTILO DELL (DARK NAVY)
+         ========================================================================= -->
+    <section class="secao-banner-dell">
+      <div class="container">
+        <div class="banner-dell-conteudo">
+          <span class="banner-dell-tag">A EMPRESA // TECNOLOGIA & SOLUÇÕES SOB MEDIDA</span>
+          <h1 class="banner-dell-titulo">Tecnologia construída para o seu negócio não parar e vender mais.</h1>
+          <p class="banner-dell-subtitulo">
+            A Malha nasceu para resolver a dor de quem gerencia operações complexas. Unimos a estabilidade de infraestrutura de alta performance com o poder de ferramentas de captação de clientes (Guest Portal) e Inteligência Artificial. Tudo com suporte direto de especialistas e foco no seu resultado.
+          </p>
+          <div class="banner-dell-acoes">
+            <a href="#pilares" class="btn btn-primary">Conhecer Nossos Pilares ↓</a>
+            <button type="button" class="btn btn-primary btn-solar btn-abrir-modal-diagnostico">Falar com um Especialista</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         CONTEÚDO SOBRE A MALHA: PILARES & METODOLOGIA
+         ========================================================================= -->
+    <section id="pilares" style="padding: 64px 0 80px;">
+      <div class="container">
+        <div class="secao-topo">
+          <span class="secao-tag secao-tag-solar">Nossa Filosofia</span>
+          <h2>Não vendemos apenas sistemas.<br>Entregamos soluções que geram resultado.</h2>
+          <p>Entendemos as dores de quem gerencia filiais distantes, redes sobrecarregadas e clientes que não podem esperar. Por isso, não entregamos apenas equipamentos: entregamos a inteligência e a automação necessárias para que a sua operação flua, gere dados e traga retorno.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; margin-top: 40px;">
+          
+          <div style="background:#ffffff; border:1px solid var(--cor-borda); border-radius:18px; padding:32px; box-shadow:0 4px 16px rgba(0,0,0,0.03);">
+            <div style="font-size:2rem; margin-bottom:14px;">🛡️</div>
+            <h3 style="font-size:1.3rem; font-weight:800; margin-bottom:10px;">Zero Falha Silenciosa</h3>
+            <p style="font-size:0.95rem; color:var(--cor-texto-secundario); line-height:1.6;">
+              Não espere o sistema cair para agir. Monitoramos sua operação 24/7 e resolvemos problemas de rede ou servidores antes mesmo de eles afetarem as suas vendas e o seu caixa.
+            </p>
+          </div>
+
+          <div style="background:#ffffff; border:1px solid var(--cor-borda); border-radius:18px; padding:32px; box-shadow:0 4px 16px rgba(0,0,0,0.03);">
+            <div style="font-size:2rem; margin-bottom:14px;">⚡</div>
+            <h3 style="font-size:1.3rem; font-weight:800; margin-bottom:10px;">Software Proprietário</h3>
+            <p style="font-size:0.95rem; color:var(--cor-texto-secundario); line-height:1.6;">
+              Criamos o Guest Portal ideal para o seu Wi-Fi corporativo. Sem telas lentas: o cliente conecta em menos de 2 segundos, tem a privacidade garantida (LGPD) e o seu time comercial recebe os dados da empresa prontos para a abordagem.
+            </p>
+          </div>
+
+          <div style="background:#ffffff; border:1px solid var(--cor-borda); border-radius:18px; padding:32px; box-shadow:0 4px 16px rgba(0,0,0,0.03);">
+            <div style="font-size:2rem; margin-bottom:14px;">🤝</div>
+            <h3 style="font-size:1.3rem; font-weight:800; margin-bottom:10px;">Atendimento Direto</h3>
+            <p style="font-size:0.95rem; color:var(--cor-texto-secundario); line-height:1.6;">
+              Fuja do atendimento robotizado. Quando você aciona a Malha, fala direto com um especialista que entende do seu negócio, resolve o seu problema com agilidade e sem enrolação de scripts.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Bloco de Depoimento & Prova Real -->
+        <div style="background: #081628; color: #ffffff; border-radius: 20px; padding: 44px; margin-top: 56px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;">
+          <div>
+            <span style="font-size:0.8rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#38bdf8; display:block; margin-bottom:12px;">Compromisso de Entrega</span>
+            <blockquote style="font-size:1.25rem; font-weight:600; line-height:1.5; margin:0 0 16px; font-style:italic; color:#f1f5f9;">
+              "O que testamos internamente por meses, hoje monitora dezenas de filiais sem falha silenciosa. Nosso objetivo é garantir que a infraestrutura seja invisível para o negócio: ela simplesmente funciona."
+            </blockquote>
+            <div style="font-size:0.9rem; color:#94a3b8;">— Equipe de Engenharia Malha Tecnologia</div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:16px 20px; display:flex; justify-content:space-between; align-items:center;">
+              <span style="color:#cbd5e1; font-size:0.95rem;">Uptime Histórico Garantido</span>
+              <strong style="color:#10b981; font-size:1.2rem;">99.98%</strong>
+            </div>
+            <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:16px 20px; display:flex; justify-content:space-between; align-items:center;">
+              <span style="color:#cbd5e1; font-size:0.95rem;">Tempo Médio de Atendimento</span>
+              <strong style="color:#38bdf8; font-size:1.2rem;">&lt; 15 min</strong>
+            </div>
+            <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:16px 20px; display:flex; justify-content:space-between; align-items:center;">
+              <span style="color:#cbd5e1; font-size:0.95rem;">Filiais Ativas Monitoradas</span>
+              <strong style="color:#ffffff; font-size:1.2rem;">30+ Unidades</strong>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+        <!-- =========================================================================
+         CHAMADA FINAL PARA DIAGNÓSTICO (DARK NAVY THEME)
+         ========================================================================= -->
+    <section class="final-cta" id="contato" style="background-color: #081628 !important; color: #ffffff !important; border-top: 1px solid rgba(255, 255, 255, 0.08) !important;">
+      <div class="container">
+        <h2 style="color: #ffffff !important;">Pronto para transformar sua operação em máquina de vendas?</h2>
+        <p style="color: #cbd5e1 !important;">15 minutos de diagnóstico comercial direto ao ponto. Sem compromisso, sem enrolação.</p>
+        <div class="final-ctas" style="display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap;">
+          <a href="mailto:contato@malha.dev.br" class="btn btn-primary btn-lg">
+            Solicitar Proposta
+          </a>
+          <button type="button" class="btn btn-primary btn-solar btn-lg btn-abrir-modal-diagnostico">
+            Falar com Especialista
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       BOTÕES FLUTUANTES DE AÇÃO RÁPIDA (DELL STYLE)
+       ========================================================================= -->
+  <aside class="botoes-flutuantes" aria-label="Ações rápidas flutuantes">
+    <a href="index.html#assistente" class="btn-flutuante destaque-dell-ai">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"/>
+      </svg>
+      <span>Assistente virtual</span>
+    </a>
+    <a href="contato.html" class="btn-flutuante destaque-dell-blue">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 18v-6a9 9 0 0118 0v6"/>
+        <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/>
+      </svg>
+      <span>Fale conosco</span>
+    </a>
+  </aside>
+
+    <!-- =========================================================================
+       RODAPÉ DA PÁGINA (DARK NAVY THEME)
+       ========================================================================= -->
+  <footer class="site-footer" style="background-color: #081628 !important; color: #ffffff !important; border-top: 1px solid rgba(255, 255, 255, 0.08) !important;">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="site-logo" style="margin-bottom: 14px;">
+            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2L17.5 10.5L26 14L17.5 17.5L14 26L10.5 17.5L2 14L10.5 10.5L14 2Z" fill="#1d68ff" />
+              <circle cx="14" cy="14" r="3.2" fill="#ffffff" />
+            </svg>
+            <span style="color: #ffffff !important;">Malha</span>
+          </div>
+          <p style="font-size: 0.92rem; max-width: 320px; color: #cbd5e1 !important; line-height: 1.55;">
+            Especialistas em Prospecção B2B via GuestPortal-WiFi e Desenvolvimento de Software Sob Medida. Transformamos sua rede e seus processos em máquinas de vendas, com IA e infraestrutura 100% gerenciada.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="color: #ffffff !important;">Produto</h4>
+          <ul>
+            <li><a href="produtos.html" style="color: #cbd5e1;">Guest Portal & Wi-Fi Analytics</a></li>
+            <li><a href="produtos.html#fluxo-guestportal" style="color: #cbd5e1;">Captura & Conformidade LGPD</a></li>
+            <li><a href="produtos.html#fluxo-guestportal" style="color: #cbd5e1;">Enriquecimento de CNPJ & Frotas</a></li>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Chatbots & Agentes de IA</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="color: #ffffff !important;">Serviços</h4>
+          <ul>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Desenvolvimento Sob Medida</a></li>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Automação com Agentes de IA</a></li>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Sites & Landing Pages</a></li>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Integrações & APIs via n8n</a></li>
+            <li><a href="servidores.html" style="color: #cbd5e1;">Infraestrutura Gerenciada</a></li>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Backup & Disaster Recovery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="color: #ffffff !important;">Empresa</h4>
+          <ul>
+            <li><a href="index.html#assistente" style="color: #cbd5e1;">Como Funciona</a></li>
+            <li><a href="galeria.html" style="color: #cbd5e1;">Galeria 3D</a></li>
+            <li><a href="planos.html" style="color: #cbd5e1;">Planos e Preços</a></li>
+            <li><a href="contato.html" style="color: #cbd5e1;">Contato & Diagnóstico</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom" style="border-top: 1px solid rgba(255, 255, 255, 0.08) !important; color: #94a3b8 !important;">
+        <span>© 2026 Malha Tecnologia. Todos os direitos reservados.</span>
+        <span style="display: inline-flex; align-items: center; gap: 8px;">
+          <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: #10b981; box-shadow: 0 0 8px #10b981;"></span>
+          Status: 100% Operacional
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODAL DE DIAGNÓSTICO TÉCNICO
+       ========================================================================= -->
+  <div class="modal-diagnostico-backdrop" id="modal-diagnostico" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <div class="modal-diagnostico-conteudo">
+      <button type="button" class="modal-btn-fechar" id="modal-fechar-btn" aria-label="Fechar janela de diagnóstico">✕</button>
+
+      <div class="modal-cabecalho">
+        <span class="modal-badge-topo">Avaliação Técnica Gratuita · 15 Minutos</span>
+        <h3 id="modal-titulo" class="modal-titulo">Agendar Diagnóstico Técnico</h3>
+        <p class="modal-subtitulo">
+          Avaliação técnica direta ao ponto. Identificamos gargalos na sua rede, riscos de queda e oportunidades de otimização de infraestrutura.
+        </p>
+      </div>
+
+      <div class="form-mensagem-erro" id="diagnostico-erro" role="alert"></div>
+
+      <form id="form-diagnostico" action="https://formsubmit.co/contato@malha.dev.br" method="POST" target="iframe-envio-silencioso" novalidate>
+        <input type="hidden" name="_subject" value="Novo Agendamento de Diagnostico Tecnico - Malha">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="form-grupo">
+          <label for="diagnostico-nome" class="form-label">Seu Nome Completo *</label>
+          <input type="text" id="diagnostico-nome" name="Nome" class="form-input" placeholder="Ex: Carlos Silva" required autocomplete="name">
+        </div>
+
+        <div class="form-dica-contato">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <span>Pelo menos <strong>um meio de contato</strong> (E-mail ou Telefone/WhatsApp) deve ser preenchido.</span>
+        </div>
+
+        <div class="form-grupo">
+          <label for="diagnostico-email" class="form-label">E-mail <span class="opcional">(obrigatório se não preencher telefone)</span></label>
+          <input type="email" id="diagnostico-email" name="Email" class="form-input" placeholder="exemplo@suaempresa.com.br" autocomplete="email">
+        </div>
+
+        <div class="form-grupo">
+          <label for="diagnostico-telefone" class="form-label">Telefone / WhatsApp <span class="opcional">(obrigatório se não preencher e-mail)</span></label>
+          <input type="tel" id="diagnostico-telefone" name="Telefone_WhatsApp" class="form-input" placeholder="(11) 99999-9999" autocomplete="tel">
+        </div>
+
+        <div class="form-grupo">
+          <label for="diagnostico-mensagem" class="form-label">Informações Adicionais <span class="opcional">(opcional)</span></label>
+          <textarea id="diagnostico-mensagem" name="Mensagem_Observacoes" class="form-textarea" rows="3" placeholder="Quantidade de filiais, tipo de roteador ou principal desafio de infraestrutura..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-solar btn-lg" style="width: 100%; margin-top: 8px;">
+          Confirmar Agendamento de Diagnóstico
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+
+      <iframe name="iframe-envio-silencioso" id="iframe-envio-silencioso" style="display:none; width:0; height:0; border:none;"></iframe>
+
+      <div class="form-mensagem-sucesso" id="diagnostico-sucesso">
+        <div style="font-size: 2.5rem; margin-bottom: 8px; color: var(--cor-destaque-verde);">✓</div>
+        <h4>Diagnóstico Solicitado com Sucesso!</h4>
+        <p>Recebemos suas informações. Os dados foram salvos no registro e enviados para nossa equipe técnica em <strong>contato@malha.dev.br</strong>.</p>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 18px;">
+          <a href="#" id="diagnostico-link-email-contingencia" class="btn btn-secondary" style="font-size: 0.88rem;">
+            ✉️ Enviar cópia pelo meu aplicativo de E-mail
+          </a>
+          <button type="button" class="btn btn-primary" id="diagnostico-fechar-sucesso" style="width: 100%;">
+            Concluir e Fechar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts Interativos -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Antigravity & AI Agents Cache
+.agents/
+.gemini/
+.vscode/
+
+# Backups e rascunhos locais
+_backup/
+
+# Arquivos temporários e logs
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

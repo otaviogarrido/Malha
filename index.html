@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Malha — Soluções integradas de infraestrutura de TI, monitoramento MikroTik multi-filial em tempo real, Guest Portal com inteligência de vendas, Zammad com WhatsApp, servidores Linux e redes Wi-Fi de alta disponibilidade.">
+  <title>Malha — Infraestrutura de TI e Ferramentas de Monitoramento</title>
+
+  <!-- Pré-conexão de Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Folha de Estilos Modular Reorganizada -->
+  <link rel="stylesheet" href="css/main.css?v=4">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. CABEÇALHO & NAVEGAÇÃO
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <div class="header-lado-esquerdo">
+        <!-- Logotipo Estilo Template -->
+        <a href="index.html" class="site-logo" aria-label="Malha - Página Inicial">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2L17.5 10.5L26 14L17.5 17.5L14 26L10.5 17.5L2 14L10.5 10.5L14 2Z" fill="#1d68ff" />
+            <circle cx="14" cy="14" r="3.2" fill="#ffffff" />
+          </svg>
+          <span>Malha</span>
+        </a>
+
+        <!-- Caixa de Pesquisa no Cabeçalho (Estilo Dell) -->
+        <div class="header-busca-box">
+          <svg class="header-busca-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="text" 
+            class="header-busca-input" 
+            placeholder="O que você está procurando?" 
+            aria-label="Buscar produtos, serviços e soluções da Malha"
+          >
+          <button type="button" class="header-busca-btn" aria-label="Pesquisar">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+          <div class="header-busca-dropdown" style="display: none;"></div>
+        </div>
+      </div>
+
+      <!-- Ações do Cabeçalho: Sobre Nós e Fale Conosco -->
+      <div class="nav-acoes">
+        <a href="sobre.html" class="btn btn-primary btn-sm header-btn-sobre">Sobre Nós</a>
+        <a href="contato.html" class="btn btn-primary btn-solar btn-sm">Fale Conosco</a>
+        <button class="botao-menu-mobile" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <svg class="icone-hamburguer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6" stroke-linecap="round"></line>
+            <line x1="3" y1="12" x2="21" y2="12" stroke-linecap="round"></line>
+            <line x1="3" y1="18" x2="21" y2="18" stroke-linecap="round"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Gaveta do Menu Mobile -->
+  <div class="menu-mobile-backdrop"></div>
+  <aside class="menu-mobile-gaveta" aria-label="Menu móvel">
+    <ul class="menu-mobile-links">
+      <li><a href="index.html" style="color:var(--cor-primaria); font-weight:700;">Início <span>→</span></a></li>
+      <li><a href="produtos.html">Produtos & Guest Portal <span>→</span></a></li>
+      <li><a href="servicos.html">Serviços de TI <span>→</span></a></li>
+      <li><a href="servidores.html">Servidores Linux <span>→</span></a></li>
+      <li><a href="wifi.html">Wi-Fi UniFi <span>→</span></a></li>
+      <li><a href="galeria.html">Galeria 3D <span>→</span></a></li>
+      <li><a href="planos.html">Planos <span>→</span></a></li>
+      <li><a href="contato.html">Contato <span>→</span></a></li>
+    </ul>
+    <div>
+      <a href="contato.html" class="btn btn-primary btn-solar" style="width: 100%;">Falar com a Malha</a>
+      <p style="font-size: 0.8rem; text-align: center; margin-top: 16px; color: var(--cor-texto-mutado);">© 2026 Malha Tecnologia</p>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       FAIXA SUPERIOR AZUL ESCURO ESTILO DELL COM GUIAS / PILLS DE NAVEGAÇÃO
+       ========================================================================= -->
+  <div class="nav-faixa-superior" aria-label="Navegação por categorias e soluções">
+    <div class="container">
+      <ul class="nav-faixa-pills">
+        <li><a href="index.html" class="nav-pill active"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg> Início</a></li>
+        <li><a href="produtos.html" class="nav-pill">Produtos</a></li>
+        <li><a href="servicos.html" class="nav-pill">Serviços</a></li>
+        <li><a href="servidores.html" class="nav-pill">Servidores</a></li>
+        <li><a href="wifi.html" class="nav-pill">Wi-Fi UniFi</a></li>
+        <li><a href="galeria.html" class="nav-pill">Galeria 3D</a></li>
+        <li><a href="planos.html" class="nav-pill">Planos</a></li>
+        <li><a href="contato.html" class="nav-pill">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         2. SEÇÃO HERO (DESTAQUE PRINCIPAL COM TOPOLOGIA PAC-MAN DE REDE)
+         ========================================================================= -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">
+            <span class="dot-pulso"></span>
+            TRANSFORME SUA REDE EM MÁQUINA DE VENDAS
+          </span>
+          <h1>
+            <span class="gradiente-texto-solar">Pare de perder clientes.<br><span style="white-space: nowrap;">Capture-os na sua própria rede.</span></span>
+          </h1>
+          <p class="lead" style="margin-top: 14px;">
+            Prospecção B2B com GuestPortal-WiFi: transforme seu Wi-Fi em captador de leads qualificados. Além disso, desenvolvemos Chatbots, Sites e Automações com IA sob medida para o seu negócio. Toda a infraestrutura gerenciada por nós, com o melhor custo-benefício do mercado.
+          </p>
+          <div class="hero-ctas">
+            <a href="produtos.html" class="btn btn-primary btn-lg">
+              Quero Captar Mais Clientes
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <button type="button" class="btn btn-primary btn-solar btn-lg btn-abrir-modal-diagnostico">
+              Solicitar Proposta Agora
+            </button>
+          </div>
+        </div>
+
+        <!-- Gateway Hub Animado — Topologia de Rede Malha com Pac-Man de Rede -->
+        <div class="gateway-hub-card" aria-label="Topologia de rede monitorada ao vivo pelo Gateway Malha">
+
+          <!-- SVG com Linhas Tracejadas Simétricas e Navegação da Logo Malha -->
+          <svg class="gateway-lines-svg" viewBox="0 0 600 480" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="fluxoAzulMalha" gradientUnits="userSpaceOnUse" x1="140" y1="100" x2="460" y2="380">
+                <stop offset="0%" stop-color="#1d68ff" stop-opacity="0.9" />
+                <stop offset="100%" stop-color="#00b4d8" stop-opacity="0.65" />
+              </linearGradient>
+              <filter id="glowMalhaCarrier" x="-100%" y="-100%" width="300%" height="300%">
+                <feDropShadow dx="0" dy="0" stdDeviation="4.5" flood-color="#1d68ff" flood-opacity="0.95"/>
+              </filter>
+            </defs>
+
+            <!-- 6 Linhas dinâmicas conectando o centro (300, 240) aos 6 nós satélites simétricos -->
+            <!-- 1. Centro -> Topo Esquerdo: Wi-Fi (Captação de Leads) (220, 101) -->
+            <line x1="300" y1="240" x2="220" y2="101" stroke="#2563eb" stroke-opacity="0.8" stroke-width="2.2" stroke-dasharray="6 5" class="gateway-line" />
+            <!-- 2. Centro -> Topo Direito: Shield Check (Segurança e LGPD) (380, 101) -->
+            <line x1="300" y1="240" x2="380" y2="101" stroke="#2563eb" stroke-opacity="0.8" stroke-width="2.2" stroke-dasharray="6 5" class="gateway-line" />
+            <!-- 3. Centro -> Direita: Bot (Chatbots e Agentes de IA) (460, 240) -->
+            <line x1="300" y1="240" x2="460" y2="240" stroke="#2563eb" stroke-opacity="0.8" stroke-width="2.2" stroke-dasharray="6 5" class="gateway-line" />
+            <!-- 4. Centro -> Inferior Direito: Code (Automação e Desenvolvimento) (380, 379) -->
+            <line x1="300" y1="240" x2="380" y2="379" stroke="#2563eb" stroke-opacity="0.8" stroke-width="2.2" stroke-dasharray="6 5" class="gateway-line" />
+            <!-- 5. Centro -> Inferior Esquerdo: Globe (Sites e Landing Pages) (220, 379) -->
+            <line x1="300" y1="240" x2="220" y2="379" stroke="#2563eb" stroke-opacity="0.8" stroke-width="2.2" stroke-dasharray="6 5" class="gateway-line" />
+            <!-- 6. Centro -> Esquerda: Cloud (Infraestrutura Gerenciada) (140, 240) -->
+            <line x1="300" y1="240" x2="140" y2="240" stroke="#2563eb" stroke-opacity="0.8" stroke-width="2.2" stroke-dasharray="6 5" class="gateway-line" />
+
+            <!-- Pastilhas de Dados (Dots discretos estilo Pac-Man nas trilhas) -->
+            <circle cx="260" cy="170" r="1.8" fill="#ffffff" stroke="#93c5fd" />
+            <circle cx="340" cy="170" r="1.8" fill="#ffffff" stroke="#93c5fd" />
+            <circle cx="380" cy="240" r="1.8" fill="#ffffff" stroke="#93c5fd" />
+            <circle cx="340" cy="310" r="1.8" fill="#ffffff" stroke="#93c5fd" />
+            <circle cx="260" cy="310" r="1.8" fill="#ffffff" stroke="#93c5fd" />
+            <circle cx="220" cy="240" r="1.8" fill="#ffffff" stroke="#93c5fd" />
+
+            <!-- O VIAJANTE PAC-MAN COM A LOGO DA MALHA -->
+            <g id="network-pacman" transform="translate(300, 240)">
+              <!-- Halo de energia azul pulsante -->
+              <circle r="12" fill="#1d68ff" opacity="0.25" filter="url(#glowMalhaCarrier)"></circle>
+              <circle r="6.5" fill="#00b4d8" opacity="0.45"></circle>
+              <!-- Estrela sparkle oficial da Malha com rotação dinâmica -->
+              <g id="malha-star-rotator">
+                <path d="M 0 -9.5 L 2.8 -2.8 L 9.5 0 L 2.8 2.8 L 0 9.5 L -2.8 2.8 L -9.5 0 L -2.8 -2.8 Z" fill="#1d68ff" stroke="#ffffff" stroke-width="1.2"></path>
+                <circle cx="0" cy="0" r="2.2" fill="#ffffff"></circle>
+              </g>
+            </g>
+          </svg>
+
+          <!-- NÓ CENTRAL (Gateway com Fundo Solar e Logo Oficial da Malha) -->
+          <div class="gateway-center-node" title="Gateway Central Malha">
+            <!-- Efeito Radar Ping -->
+            <div class="gateway-center-ping"></div>
+
+            <!-- Ícone / Logo Oficial Malha -->
+            <div class="gateway-center-icon">
+              <svg width="18" height="18" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 2L17.5 10.5L26 14L17.5 17.5L14 26L10.5 17.5L2 14L10.5 10.5L14 2Z" fill="#1d68ff" />
+                <circle cx="14" cy="14" r="3.2" fill="#ffffff" />
+              </svg>
+            </div>
+            <span style="font-size:0.82rem; font-weight:800; color:#ffffff; letter-spacing:-0.02em; line-height:1.1;">Malha</span>
+            <span class="gateway-core-text">Gateway Core</span>
+          </div>
+
+          <!-- NÓ SATÉLITE 1 (Topo Esquerdo: Wi-Fi - Captação de Leads) -->
+          <div class="gateway-satelite-node satelite-1" data-satelite="1" title="Wi-Fi (Captação de Leads)">
+            <span class="gateway-satelite-dot"></span>
+            <svg width="18" height="18" fill="none" stroke="#1d68ff" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 20h.01M2 8.82a15 15 0 0 1 20 0M5 12.86a10 10 0 0 1 14 0M8.5 16.43a5 5 0 0 1 7 0"></path>
+            </svg>
+            <div class="gateway-context-badge badge-top" id="context-badge-1">
+              <span class="badge-dot" style="background:#1d68ff;"></span>
+              <span>Captação de Leads Wi-Fi</span>
+            </div>
+          </div>
+
+          <!-- NÓ SATÉLITE 2 (Topo Direito: Shield Check - Segurança e LGPD) -->
+          <div class="gateway-satelite-node satelite-2" data-satelite="2" title="Shield Check (Segurança e LGPD)">
+            <span class="gateway-satelite-dot"></span>
+            <svg width="18" height="18" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"></path>
+            </svg>
+            <div class="gateway-context-badge badge-top" id="context-badge-2">
+              <span class="badge-dot" style="background:#10b981;"></span>
+              <span>Segurança & LGPD</span>
+            </div>
+          </div>
+
+          <!-- NÓ SATÉLITE 3 (Direita: Bot - Chatbots e Agentes de IA) -->
+          <div class="gateway-satelite-node satelite-3" data-satelite="3" title="Bot (Chatbots e Agentes de IA)">
+            <span class="gateway-satelite-dot"></span>
+            <svg width="18" height="18" fill="none" stroke="#8b5cf6" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8V4H8"></path>
+              <rect x="4" y="8" width="16" height="12" rx="2"></rect>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2 14h2M20 14h2M15 13v2M9 13v2"></path>
+            </svg>
+            <div class="gateway-context-badge badge-top" id="context-badge-3">
+              <span class="badge-dot" style="background:#8b5cf6;"></span>
+              <span>Chatbots & Agentes de IA</span>
+            </div>
+          </div>
+
+          <!-- NÓ SATÉLITE 4 (Inferior Direito: Code - Automação e Desenvolvimento) -->
+          <div class="gateway-satelite-node satelite-4" data-satelite="4" title="Code (Automação e Desenvolvimento)">
+            <span class="gateway-satelite-dot"></span>
+            <svg width="18" height="18" fill="none" stroke="#f59e0b" stroke-width="2" viewBox="0 0 24 24">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+              <line x1="14" y1="4" x2="10" y2="20"></line>
+            </svg>
+            <div class="gateway-context-badge badge-bottom" id="context-badge-4">
+              <span class="badge-dot" style="background:#f59e0b;"></span>
+              <span>Automação & Desenvolvimento</span>
+            </div>
+          </div>
+
+          <!-- NÓ SATÉLITE 5 (Inferior Esquerdo: Globe - Sites e Landing Pages) -->
+          <div class="gateway-satelite-node satelite-5" data-satelite="5" title="Globe (Sites e Landing Pages)">
+            <span class="gateway-satelite-dot"></span>
+            <svg width="18" height="18" fill="none" stroke="#38bdf8" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2 12h20"></path>
+            </svg>
+            <div class="gateway-context-badge badge-bottom" id="context-badge-5">
+              <span class="badge-dot" style="background:#38bdf8;"></span>
+              <span>Sites & Landing Pages</span>
+            </div>
+            <!-- Ícone de Cursor (Seta Azul) apontando para o ícone inferior esquerdo -->
+            <div class="gateway-cursor-pointer" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#1d68ff" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round">
+                <path d="M4 4l7.07 17 2.51-7.39L21 11.07 4 4z"></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- NÓ SATÉLITE 6 (Esquerda: Cloud - Infraestrutura Gerenciada) -->
+          <div class="gateway-satelite-node satelite-6" data-satelite="6" title="Cloud (Infraestrutura Gerenciada)">
+            <span class="gateway-satelite-dot"></span>
+            <svg width="18" height="18" fill="none" stroke="#00b4d8" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+            </svg>
+            <div class="gateway-context-badge badge-top" id="context-badge-6">
+              <span class="badge-dot" style="background:#00b4d8;"></span>
+              <span>Infraestrutura Gerenciada</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Script de Navegação Dinâmica da Logo Malha entre os Nós -->
+        <script>
+          (function() {
+            var pacmanEl = document.getElementById('network-pacman');
+            var rotatorEl = document.getElementById('malha-star-rotator');
+            if (!pacmanEl || !rotatorEl) return;
+
+            var cx = 300, cy = 240;
+
+            // Coordenadas simétricas exatas dos 6 nós satélites (Raio = 160px a cada 60°)
+            var nodes = [
+              { id: 1, x: 220, y: 101 },
+              { id: 2, x: 380, y: 101 },
+              { id: 3, x: 460, y: 240 },
+              { id: 4, x: 380, y: 379 },
+              { id: 5, x: 220, y: 379 },
+              { id: 6, x: 140, y: 240 }
+            ];
+
+            var state = 'to_node';
+            var targetNodeIndex = 0;
+            var progress = 0;
+            var travelSpeed = 0.008;
+            var maxReach = 0.72;
+            var pauseTicks = 0;
+            var spinAngle = 0;
+            var lastVisited = -1;
+            var activeBadge = null;
+            var activeSat = null;
+
+            function clearActiveContext() {
+              if (activeBadge) {
+                activeBadge.classList.remove('is-active');
+                activeBadge = null;
+              }
+              if (activeSat) {
+                activeSat.classList.remove('is-active');
+                activeSat = null;
+              }
+            }
+
+            function pickRandomNode() {
+              var choices = [0, 1, 2, 3, 4, 5].filter(function(i) { return i !== lastVisited; });
+              var chosen = choices[Math.floor(Math.random() * choices.length)];
+              lastVisited = chosen;
+              return chosen;
+            }
+
+            targetNodeIndex = pickRandomNode();
+
+            function updateCarrier() {
+              spinAngle = (spinAngle + 1.2) % 360;
+              rotatorEl.setAttribute('transform', 'rotate(' + spinAngle + ')');
+
+              var px = cx, py = cy;
+              var tNode = nodes[targetNodeIndex];
+
+              if (state === 'to_node') {
+                progress += travelSpeed;
+                if (progress >= 1) {
+                  progress = 1;
+                  state = 'at_node';
+                  pauseTicks = 210;
+
+                  clearActiveContext();
+                  activeBadge = document.getElementById('context-badge-' + tNode.id);
+                  activeSat = document.querySelector('.satelite-' + tNode.id);
+                  if (activeBadge) activeBadge.classList.add('is-active');
+                  if (activeSat) activeSat.classList.add('is-active');
+                }
+
+                var ease = progress * progress * (3 - 2 * progress);
+                var curDist = ease * maxReach;
+                px = cx + (tNode.x - cx) * curDist;
+                py = cy + (tNode.y - cy) * curDist;
+
+              } else if (state === 'at_node') {
+                var curDist = maxReach;
+                px = cx + (tNode.x - cx) * curDist;
+                py = cy + (tNode.y - cy) * curDist;
+                pauseTicks--;
+                if (pauseTicks <= 0) {
+                  clearActiveContext();
+                  state = 'to_center';
+                  progress = 0;
+                }
+
+              } else if (state === 'to_center') {
+                progress += travelSpeed;
+                if (progress >= 1) {
+                  progress = 1;
+                  state = 'at_center';
+                  pauseTicks = 28;
+                }
+
+                var ease = 1 - (progress * progress * (3 - 2 * progress));
+                var curDist = ease * maxReach;
+                px = cx + (tNode.x - cx) * curDist;
+                py = cy + (tNode.y - cy) * curDist;
+
+              } else if (state === 'at_center') {
+                px = cx;
+                py = cy;
+                pauseTicks--;
+                if (pauseTicks <= 0) {
+                  state = 'to_node';
+                  progress = 0;
+                  targetNodeIndex = pickRandomNode();
+                }
+              }
+
+              pacmanEl.setAttribute('transform', 'translate(' + px.toFixed(1) + ', ' + py.toFixed(1) + ')');
+              requestAnimationFrame(updateCarrier);
+            }
+
+            requestAnimationFrame(updateCarrier);
+          })();
+        </script>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. ASSISTENTE DE VENDAS & BUSCA RÁPIDA (ESCALAR O NEGÓCIO)
+         ========================================================================= -->
+    <section class="secao-assistente" id="assistente" aria-label="Soluções para escalar o seu negócio">
+      <div class="container assistente-container">
+        <h2 class="assistente-titulo">O que você precisa para escalar o seu negócio hoje?</h2>
+        
+        <div class="assistente-busca-box">
+          <svg class="assistente-icone-ai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          </svg>
+          <input 
+            type="text" 
+            class="assistente-input" 
+            placeholder="O que você quer resolver hoje? (Ex: Captar leads, criar um Chatbot, monitorar rede...)" 
+            aria-label="O que você quer resolver hoje? (Ex: Captar leads, criar um Chatbot, monitorar rede...)"
+          >
+          <button class="assistente-btn-enviar" aria-label="Executar pesquisa rápida">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Pílulas de Atalhos Rápidos Clicáveis -->
+        <div class="assistente-pilulas">
+          <button class="pilula-atalho borda-azul" data-busca="wifi">📶 Captação B2B & Wi-Fi</button>
+          <button class="pilula-atalho borda-bordo" data-busca="chatbot">🤖 Chatbots & IA</button>
+          <button class="pilula-atalho borda-dupla" data-busca="sites">🌐 Sites & Automações</button>
+          <button class="pilula-atalho borda-azul" data-busca="infraestrutura">🛡️ Infraestrutura Gerenciada</button>
+          <button class="pilula-atalho borda-bordo" data-busca="planos">⚡ Simular Planos</button>
+          <button class="pilula-atalho borda-dupla btn-abrir-modal-diagnostico" data-busca="proposta">🚀 Solicitar Proposta</button>
+        </div>
+
+        <!-- Subtítulo (abaixo dos botões) -->
+        <p class="assistente-legenda" style="margin-top: 22px; font-size: 0.95rem; color: var(--cor-texto-secundario); max-width: 680px; margin-left: auto; margin-right: auto; line-height: 1.55;">
+          Soluções inteligentes para captar clientes, automatizar processos e manter sua operação no ar. Escolha um caminho abaixo.
+        </p>
+
+        <!-- Resposta Dinâmica do Assistente -->
+        <div class="assistente-resposta-box"></div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. FAIXA DE ESTATÍSTICAS E MÉTRICAS (4 CARDS BRANCOS COM SPARKLINE)
+         ========================================================================= -->
+    <div class="stats-strip" aria-label="Métricas e indicadores de desempenho">
+      <div class="container stats-grid">
+        
+        <!-- Card 1: Leads Qualificados Captados -->
+        <div class="stat-item">
+          <div class="label">Leads Qualificados Captados</div>
+          <div class="num">+15k</div>
+          <div class="stat-badge positivo">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            ↗ Via GuestPortal-WiFi
+          </div>
+          <svg class="stat-sparkline" viewBox="0 0 160 38" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="sparkGradLeads" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#10b981" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,32 Q25,28 45,18 T90,14 T130,8 T160,5 L160,38 L0,38 Z" fill="url(#sparkGradLeads)"/>
+            <path d="M0,32 Q25,28 45,18 T90,14 T130,8 T160,5" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- Card 2: Atendimentos Automatizados -->
+        <div class="stat-item">
+          <div class="label">Atendimentos Automatizados</div>
+          <div class="num">24/7</div>
+          <div class="stat-badge positivo">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            ↗ Agentes de IA e Chatbots
+          </div>
+          <svg class="stat-sparkline" viewBox="0 0 160 38" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="sparkGradAtend" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1d68ff" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#1d68ff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,28 Q30,12 60,20 T110,10 T160,6 L160,38 L0,38 Z" fill="url(#sparkGradAtend)"/>
+            <path d="M0,28 Q30,12 60,20 T110,10 T160,6" fill="none" stroke="#1d68ff" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- Card 3: Redução de Custo Operacional -->
+        <div class="stat-item">
+          <div class="label">Redução de Custo Operacional</div>
+          <div class="num">-35%</div>
+          <div class="stat-badge alerta">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 7l9.2 9.2M17 7v10H7"/></svg>
+            ↘ Processos otimizados com IA
+          </div>
+          <svg class="stat-sparkline" viewBox="0 0 160 38" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="sparkGradCusto" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#f97316" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,6 Q35,10 75,18 T125,26 T160,32 L160,38 L0,38 Z" fill="url(#sparkGradCusto)"/>
+            <path d="M0,6 Q35,10 75,18 T125,26 T160,32" fill="none" stroke="#f97316" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- Card 4: Infraestrutura Gerenciada -->
+        <div class="stat-item">
+          <div class="label">Infraestrutura Gerenciada</div>
+          <div class="num">99.9%</div>
+          <div class="stat-badge positivo">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            ↗ Estabilidade garantida
+          </div>
+          <svg class="stat-sparkline" viewBox="0 0 160 38" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="sparkGradInfra" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#00b4d8" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#00b4d8" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,18 Q30,10 60,14 T120,8 T160,6 L160,38 L0,38 Z" fill="url(#sparkGradInfra)"/>
+            <path d="M0,18 Q30,10 60,14 T120,8 T160,6" fill="none" stroke="#00b4d8" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         5. VISÃO GERAL DAS SOLUÇÕES & HUB DE NAVEGAÇÃO (DARK NAVY THEME)
+         ========================================================================= -->
+    <section class="secao-hub-solucoes-dark" id="solucoes-hub" style="background-color: #081628 !important; color: #ffffff !important;">
+      <div class="container">
+        <div class="secao-topo centralizado">
+          <span class="secao-tag secao-tag-solar">Soluções Especializadas</span>
+          <h2 style="color: #ffffff !important;">Acesso direto a cada pilar da sua infraestrutura de TI.</h2>
+          <p style="color: #cbd5e1 !important;">Navegue pelas páginas dedicadas de cada solução para visualizar o escopo técnico completo, fluxo de telas e modelos de contratação.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 40px;">
+          
+          <!-- Card 1: Guest Portal -->
+          <a href="produtos.html" style="text-decoration: none; color: inherit; display: block;" class="hub-card-link">
+            <div class="hub-card-dark" style="background-color: #0d213b !important; border: 1px solid rgba(56, 189, 248, 0.22) !important;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                <span class="badge" style="background: rgba(29, 104, 255, 0.22); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.45);">Software & Wi-Fi</span>
+                <span style="font-size: 0.82rem; font-weight: 700; color: #34d399;">Máquina de Vendas</span>
+              </div>
+              <h3 style="color: #ffffff !important;">Captação de Leads (GuestPortal)</h3>
+              <p style="color: #cbd5e1 !important;">
+                Transforme seu Wi-Fi em captador de clientes. Colete dados valiosos, enriqueça cadastros e dispare campanhas automáticas direto no WhatsApp de quem entra no seu estabelecimento.
+              </p>
+              <div class="hub-card-cta">
+                Quero captar mais clientes <span>→</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 2: Chatbots & Agentes de IA -->
+          <a href="servicos.html" style="text-decoration: none; color: inherit; display: block;" class="hub-card-link">
+            <div class="hub-card-dark" style="background-color: #0d213b !important; border: 1px solid rgba(56, 189, 248, 0.22) !important;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                <span class="badge" style="background: rgba(56, 189, 248, 0.18); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4);">Desenvolvimento Sob Medida</span>
+                <span style="font-size: 0.82rem; font-weight: 700; color: #94a3b8;">Atendimento 24/7</span>
+              </div>
+              <h3 style="color: #ffffff !important;">Chatbots & Agentes de IA</h3>
+              <p style="color: #cbd5e1 !important;">
+                Automatize seu comercial e suporte. Criamos chatbots inteligentes e sites de alta conversão desenhados para o seu processo de vendas, sem pacotes prontos.
+              </p>
+              <div class="hub-card-cta">
+                Ver soluções de IA <span>→</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 3: TI Gerenciada & Automações -->
+          <a href="servidores.html" style="text-decoration: none; color: inherit; display: block;" class="hub-card-link">
+            <div class="hub-card-dark" style="background-color: #0d213b !important; border: 1px solid rgba(56, 189, 248, 0.22) !important;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                <span class="badge" style="background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4);">Infraestrutura</span>
+                <span style="font-size: 0.82rem; font-weight: 700; color: #34d399;">100% Gerenciada</span>
+              </div>
+              <h3 style="color: #ffffff !important;">TI Gerenciada & Automações</h3>
+              <p style="color: #cbd5e1 !important;">
+                Cuidamos de toda a infraestrutura da sua empresa (servidores, redes e backups). Sua operação não para, seus dados estão seguros e você foca apenas em vender.
+              </p>
+              <div class="hub-card-cta">
+                Conhecer infraestrutura <span>→</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 4: Redes Wi-Fi Empresariais -->
+          <a href="wifi.html" style="text-decoration: none; color: inherit; display: block;" class="hub-card-link">
+            <div class="hub-card-dark" style="background-color: #0d213b !important; border: 1px solid rgba(56, 189, 248, 0.22) !important;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                <span class="badge" style="background: rgba(6, 182, 212, 0.2); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.45);">Redes Corporativas</span>
+                <span style="font-size: 0.82rem; font-weight: 700; color: #22d3ee;">Alta Performance</span>
+              </div>
+              <h3 style="color: #ffffff !important;">Redes Wi-Fi Empresariais</h3>
+              <p style="color: #cbd5e1 !important;">
+                Projetos de redes Wi-Fi robustas para empresas e franquias. Roteadores de alta performance, roaming transparente e segurança de dados para sua operação.
+              </p>
+              <div class="hub-card-cta">
+                Projetos de redes <span>→</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 5: Galeria 3D -->
+          <a href="galeria.html" style="text-decoration: none; color: inherit; display: block;" class="hub-card-link">
+            <div class="hub-card-dark" style="background-color: #0d213b !important; border: 1px solid rgba(56, 189, 248, 0.22) !important;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                <span class="badge" style="background: rgba(139, 92, 246, 0.2); color: #c084fc; border: 1px solid rgba(139, 92, 246, 0.45);">Interativo</span>
+                <span style="font-size: 0.82rem; font-weight: 700; color: #c084fc;">Tour 3D</span>
+              </div>
+              <h3 style="color: #ffffff !important;">Veja Nossas Soluções na Prática</h3>
+              <p style="color: #cbd5e1 !important;">
+                Navegue pelas interfaces do nosso Guest Portal, dashboards de automação e sites criados para nossos clientes. Uma demonstração real do que podemos fazer.
+              </p>
+              <div class="hub-card-cta">
+                Explorar Galeria 3D <span>→</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 6: Planos Sem Fidelidade -->
+          <a href="planos.html" style="text-decoration: none; color: inherit; display: block;" class="hub-card-link">
+            <div class="hub-card-dark" style="background-color: #0d213b !important; border: 1px solid rgba(56, 189, 248, 0.22) !important;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                <span class="badge" style="background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.45);">Transparência</span>
+                <span style="font-size: 0.82rem; font-weight: 700; color: #4ade80;">A partir R$ 349/mês</span>
+              </div>
+              <h3 style="color: #ffffff !important;">Planos Sem Fidelidade</h3>
+              <p style="color: #cbd5e1 !important;">
+                Licenciamento escalável de acordo com o tamanho da sua empresa. Sem taxas de setup abusivas, sem multas e com o melhor custo-benefício do mercado.
+              </p>
+              <div class="hub-card-cta">
+                Ver Planos e Valores <span>→</span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         CHAMADA FINAL PARA DIAGNÓSTICO (DARK NAVY THEME)
+         ========================================================================= -->
+    <section class="final-cta" id="contato" style="background-color: #081628 !important; color: #ffffff !important; border-top: 1px solid rgba(255, 255, 255, 0.08) !important;">
+      <div class="container">
+        <h2 style="color: #ffffff !important;">Pronto para transformar sua operação em máquina de vendas?</h2>
+        <p style="color: #cbd5e1 !important;">15 minutos de diagnóstico comercial direto ao ponto. Sem compromisso, sem enrolação.</p>
+        <div class="final-ctas" style="display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap;">
+          <a href="mailto:contato@malha.dev.br" class="btn btn-primary btn-lg">
+            Solicitar Proposta
+          </a>
+          <button type="button" class="btn btn-primary btn-solar btn-lg btn-abrir-modal-diagnostico">
+            Falar com Especialista
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       BOTÕES FLUTUANTES DE AÇÃO RÁPIDA (DELL STYLE)
+       ========================================================================= -->
+  <aside class="botoes-flutuantes" aria-label="Ações rápidas flutuantes">
+    <a href="#assistente" class="btn-flutuante destaque-dell-ai" onclick="document.querySelector('.assistente-input')?.focus();">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"/>
+      </svg>
+      <span>Assistente virtual</span>
+    </a>
+    <a href="contato.html" class="btn-flutuante destaque-dell-blue">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 18v-6a9 9 0 0118 0v6"/>
+        <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/>
+      </svg>
+      <span>Fale conosco</span>
+    </a>
+  </aside>
+
+  <!-- =========================================================================
+       RODAPÉ DA PÁGINA (DARK NAVY THEME)
+       ========================================================================= -->
+  <footer class="site-footer" style="background-color: #081628 !important; color: #ffffff !important; border-top: 1px solid rgba(255, 255, 255, 0.08) !important;">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="site-logo" style="margin-bottom: 14px;">
+            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2L17.5 10.5L26 14L17.5 17.5L14 26L10.5 17.5L2 14L10.5 10.5L14 2Z" fill="#1d68ff" />
+              <circle cx="14" cy="14" r="3.2" fill="#ffffff" />
+            </svg>
+            <span style="color: #ffffff !important;">Malha</span>
+          </div>
+          <p style="font-size: 0.92rem; max-width: 320px; color: #cbd5e1 !important; line-height: 1.55;">
+            Especialistas em Prospecção B2B via GuestPortal-WiFi e Desenvolvimento de Software Sob Medida. Transformamos sua rede e seus processos em máquinas de vendas, com IA e infraestrutura 100% gerenciada.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="color: #ffffff !important;">Produto</h4>
+          <ul>
+            <li><a href="produtos.html" style="color: #cbd5e1;">Guest Portal & Wi-Fi Analytics</a></li>
+            <li><a href="produtos.html#fluxo-guestportal" style="color: #cbd5e1;">Captura & Conformidade LGPD</a></li>
+            <li><a href="produtos.html#fluxo-guestportal" style="color: #cbd5e1;">Enriquecimento de CNPJ & Frotas</a></li>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Chatbots & Agentes de IA</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="color: #ffffff !important;">Serviços</h4>
+          <ul>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Desenvolvimento Sob Medida</a></li>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Automação com Agentes de IA</a></li>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Sites & Landing Pages</a></li>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Integrações & APIs via n8n</a></li>
+            <li><a href="servidores.html" style="color: #cbd5e1;">Infraestrutura Gerenciada</a></li>
+            <li><a href="servicos.html" style="color: #cbd5e1;">Backup & Disaster Recovery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="color: #ffffff !important;">Empresa</h4>
+          <ul>
+            <li><a href="#assistente" style="color: #cbd5e1;">Como Funciona</a></li>
+            <li><a href="galeria.html" style="color: #cbd5e1;">Galeria 3D</a></li>
+            <li><a href="planos.html" style="color: #cbd5e1;">Planos e Preços</a></li>
+            <li><a href="contato.html" style="color: #cbd5e1;">Contato & Diagnóstico</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom" style="border-top: 1px solid rgba(255, 255, 255, 0.08) !important; color: #94a3b8 !important;">
+        <span>© 2026 Malha Tecnologia. Todos os direitos reservados.</span>
+        <span style="display: inline-flex; align-items: center; gap: 8px;">
+          <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: #10b981; box-shadow: 0 0 8px #10b981;"></span>
+          Status: 100% Operacional
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODAL DE DIAGNÓSTICO TÉCNICO
+       ========================================================================= -->
+  <div class="modal-diagnostico-backdrop" id="modal-diagnostico" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <div class="modal-diagnostico-conteudo">
+      <button type="button" class="modal-btn-fechar" id="modal-fechar-btn" aria-label="Fechar janela de diagnóstico">✕</button>
+
+      <div class="modal-cabecalho">
+        <span class="modal-badge-topo">Avaliação Técnica Gratuita · 15 Minutos</span>
+        <h3 id="modal-titulo" class="modal-titulo">Agendar Diagnóstico de Infraestrutura</h3>
+        <p class="modal-subtitulo">
+          Avaliação técnica direta ao ponto. Identificamos gargalos na sua rede, riscos de queda e oportunidades de otimização de infraestrutura.
+        </p>
+      </div>
+
+      <div class="form-mensagem-erro" id="diagnostico-erro" role="alert"></div>
+
+      <form id="form-diagnostico" action="https://formsubmit.co/contato@malha.dev.br" method="POST" target="iframe-envio-silencioso" novalidate>
+        <input type="hidden" name="_subject" value="Novo Agendamento de Diagnostico Tecnico - Malha">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="form-grupo">
+          <label for="diagnostico-nome" class="form-label">Seu Nome Completo *</label>
+          <input type="text" id="diagnostico-nome" name="Nome" class="form-input" placeholder="Ex: Carlos Silva" required autocomplete="name">
+        </div>
+
+        <div class="form-dica-contato">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <span>Pelo menos <strong>um meio de contato</strong> (E-mail ou Telefone/WhatsApp) deve ser preenchido.</span>
+        </div>
+
+        <div class="form-grupo">
+          <label for="diagnostico-email" class="form-label">E-mail <span class="opcional">(obrigatório se não preencher telefone)</span></label>
+          <input type="email" id="diagnostico-email" name="Email" class="form-input" placeholder="exemplo@suaempresa.com.br" autocomplete="email">
+        </div>
+
+        <div class="form-grupo">
+          <label for="diagnostico-telefone" class="form-label">Telefone / WhatsApp <span class="opcional">(obrigatório se não preencher e-mail)</span></label>
+          <input type="tel" id="diagnostico-telefone" name="Telefone_WhatsApp" class="form-input" placeholder="(11) 99999-9999" autocomplete="tel">
+        </div>
+
+        <div class="form-grupo">
+          <label for="diagnostico-mensagem" class="form-label">Informações Adicionais <span class="opcional">(opcional)</span></label>
+          <textarea id="diagnostico-mensagem" name="Mensagem_Observacoes" class="form-textarea" rows="3" placeholder="Quantidade de filiais, tipo de roteador ou principal desafio de infraestrutura..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-solar btn-lg" style="width: 100%; margin-top: 8px;">
+          Confirmar Agendamento de Diagnóstico
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+
+      <iframe name="iframe-envio-silencioso" id="iframe-envio-silencioso" style="display:none; width:0; height:0; border:none;"></iframe>
+
+      <div class="form-mensagem-sucesso" id="diagnostico-sucesso">
+        <div style="font-size: 2.5rem; margin-bottom: 8px; color: var(--cor-destaque-verde);">✓</div>
+        <h4>Diagnóstico Solicitado com Sucesso!</h4>
+        <p>Recebemos suas informações. Os dados foram salvos no registro e enviados para nossa equipe técnica em <strong>contato@malha.dev.br</strong>.</p>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 18px;">
+          <a href="#" id="diagnostico-link-email-contingencia" class="btn btn-secondary" style="font-size: 0.88rem;">
+            ✉️ Enviar cópia pelo meu aplicativo de E-mail
+          </a>
+          <button type="button" class="btn btn-primary" id="diagnostico-fechar-sucesso" style="width: 100%;">
+            Concluir e Fechar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts Interativos -->
+  <script src="js/main.js"></script>
+</body>
+</html>
