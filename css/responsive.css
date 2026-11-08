@@ -92,9 +92,15 @@
 
 /* --- Smartphones em Modo Retrato (<= 640px) --- */
 @media (max-width: 640px) {
-  html, body {
-    overflow-x: hidden !important;
-    max-width: 100vw !important;
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: clip !important;
+    max-width: 100% !important;
     width: 100% !important;
   }
 

@@ -986,21 +986,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   iniciarContadorVisitas();
 
-  // --- Foco Automático e Rolagem Precisa no Formulário de Contato ---
+    // --- Foco Automático e Rolagem Precisa no Formulário de Contato ---
   const rolarParaFormularioContato = (comFoco = true) => {
     const alvo = document.getElementById('formulario-contato');
     if (alvo) {
       if (typeof fecharMenuMobile === 'function') {
         fecharMenuMobile();
       }
+      try {
+        alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } catch (e) {}
+
       const cabecalho = document.querySelector('.site-header');
       const offset = (cabecalho ? cabecalho.offsetHeight : 80) + 16;
-      const alvoTop = alvo.getBoundingClientRect().top + window.pageYOffset - offset;
+      const topo = alvo.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop || 0) - offset;
 
-      window.scrollTo({
-        top: Math.max(0, alvoTop),
-        behavior: 'smooth'
-      });
+      try {
+        window.scrollTo({
+          top: Math.max(0, topo),
+          behavior: 'smooth'
+        });
+      } catch (e) {
+        window.scrollTo(0, Math.max(0, topo));
+      }
 
       if (comFoco) {
         setTimeout(() => {
