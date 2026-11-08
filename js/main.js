@@ -985,6 +985,26 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   iniciarContadorVisitas();
+
+  // --- Foco Automático e Suave no Formulário de Contato ---
+  const focarPrimeiroCampoContato = () => {
+    const campoNome = document.getElementById('contato-nome');
+    if (campoNome) {
+      setTimeout(() => {
+        campoNome.focus({ preventScroll: true });
+      }, 400);
+    }
+  };
+
+  if (window.location.hash === '#formulario-contato') {
+    setTimeout(focarPrimeiroCampoContato, 300);
+  }
+
+  document.querySelectorAll('a[href$="#formulario-contato"]').forEach((link) => {
+    link.addEventListener('click', () => {
+      focarPrimeiroCampoContato();
+    });
+  });
 });
 
 

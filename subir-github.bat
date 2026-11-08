@@ -8,7 +8,7 @@ echo ===================================================
 echo.
 echo Salvando alteracoes no codigo...
 git add .
-git commit -m "fix(wifi): aplicar card console de alto contraste com texto branco e badges luminosos no terminal unifi"
+git commit -m "fix(contato e favicon): vincular botoes fale conosco ao formulario e atualizar cache do favicon v22"
 echo.
 echo Enviando para o GitHub...
 git push origin main
