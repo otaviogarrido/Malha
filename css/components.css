@@ -4236,6 +4236,148 @@
   letter-spacing: 0.03em;
 }
 
+/* ==========================================================================
+   PÁGINA SOBRE NÓS: PILARES & COMPROMISSO DE ENTREGA (RESPONSIVO)
+   ========================================================================== */
+.sobre-pilares-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.sobre-pilar-card {
+  background: #ffffff;
+  border: 1px solid var(--cor-borda);
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sobre-pilar-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.sobre-compromisso-card {
+  background: #081628;
+  color: #ffffff;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 20px;
+  padding: 44px;
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+  box-shadow: 0 12px 32px rgba(8, 22, 40, 0.25);
+}
+
+.sobre-compromisso-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.sobre-compromisso-quote {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0 0 16px;
+  font-style: italic;
+  color: #f1f5f9;
+}
+
+.sobre-compromisso-autor {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.sobre-compromisso-metricas {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sobre-metrica-item {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.sobre-metrica-label {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.sobre-metrica-valor {
+  font-size: 1.2rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Responsividade Mobile & Tablet */
+@media (max-width: 860px) {
+  .sobre-compromisso-card {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px 24px;
+    margin-top: 40px;
+  }
+
+  .sobre-compromisso-quote {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .sobre-pilares-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .sobre-pilar-card {
+    padding: 24px 18px;
+  }
+
+  .sobre-compromisso-card {
+    padding: 24px 16px;
+    border-radius: 16px;
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .sobre-compromisso-quote {
+    font-size: 1.02rem;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+
+  .sobre-metrica-item {
+    padding: 14px 16px;
+  }
+
+  .sobre-metrica-label {
+    font-size: 0.88rem;
+  }
+
+  .sobre-metrica-valor {
+    font-size: 1.1rem;
+  }
+}
+
 
 
 

@@ -12,12 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Folha de Estilos Modular -->
-  <link rel="stylesheet" href="css/main.css?v=23">
+  <link rel="stylesheet" href="css/main.css?v=24">
   <!-- Favicon Oficial da Malha -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=23">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=23">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon.png?v=23">
-  <link rel="shortcut icon" href="favicon.ico?v=23">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=24">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=24">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.png?v=24">
+  <link rel="shortcut icon" href="favicon.ico?v=24">
 </head>
 <body>
 
@@ -141,9 +141,9 @@
           <p>Entendemos as dores de quem gerencia filiais distantes, redes sobrecarregadas e clientes que não podem esperar. Por isso, não entregamos apenas equipamentos: entregamos a inteligência e a automação necessárias para que a sua operação flua, gere dados e traga retorno.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; margin-top: 40px;">
+        <div class="sobre-pilares-grid">
           
-          <div style="background:#ffffff; border:1px solid var(--cor-borda); border-radius:18px; padding:32px; box-shadow:0 4px 16px rgba(0,0,0,0.03);">
+          <div class="sobre-pilar-card">
             <div style="font-size:2rem; margin-bottom:14px;">🛡️</div>
             <h3 style="font-size:1.3rem; font-weight:800; margin-bottom:10px;">Zero Falha Silenciosa</h3>
             <p style="font-size:0.95rem; color:var(--cor-texto-secundario); line-height:1.6;">
@@ -151,7 +151,7 @@
             </p>
           </div>
 
-          <div style="background:#ffffff; border:1px solid var(--cor-borda); border-radius:18px; padding:32px; box-shadow:0 4px 16px rgba(0,0,0,0.03);">
+          <div class="sobre-pilar-card">
             <div style="font-size:2rem; margin-bottom:14px;">⚡</div>
             <h3 style="font-size:1.3rem; font-weight:800; margin-bottom:10px;">Software Proprietário</h3>
             <p style="font-size:0.95rem; color:var(--cor-texto-secundario); line-height:1.6;">
@@ -159,7 +159,7 @@
             </p>
           </div>
 
-          <div style="background:#ffffff; border:1px solid var(--cor-borda); border-radius:18px; padding:32px; box-shadow:0 4px 16px rgba(0,0,0,0.03);">
+          <div class="sobre-pilar-card">
             <div style="font-size:2rem; margin-bottom:14px;">🤝</div>
             <h3 style="font-size:1.3rem; font-weight:800; margin-bottom:10px;">Atendimento Direto</h3>
             <p style="font-size:0.95rem; color:var(--cor-texto-secundario); line-height:1.6;">
@@ -170,27 +170,27 @@
         </div>
 
         <!-- Bloco de Depoimento & Prova Real -->
-        <div style="background: #081628; color: #ffffff; border-radius: 20px; padding: 44px; margin-top: 56px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;">
+        <div class="sobre-compromisso-card">
           <div>
-            <span style="font-size:0.8rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#38bdf8; display:block; margin-bottom:12px;">Compromisso de Entrega</span>
-            <blockquote style="font-size:1.25rem; font-weight:600; line-height:1.5; margin:0 0 16px; font-style:italic; color:#f1f5f9;">
+            <span class="sobre-compromisso-tag">Compromisso de Entrega</span>
+            <blockquote class="sobre-compromisso-quote">
               "O que testamos internamente por meses, hoje monitora dezenas de filiais sem falha silenciosa. Nosso objetivo é garantir que a infraestrutura seja invisível para o negócio: ela simplesmente funciona."
             </blockquote>
-            <div style="font-size:0.9rem; color:#94a3b8;">— Equipe de Engenharia Malha Tecnologia</div>
+            <div class="sobre-compromisso-autor">— Equipe de Engenharia Malha Tecnologia</div>
           </div>
 
-          <div style="display:flex; flex-direction:column; gap:16px;">
-            <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:16px 20px; display:flex; justify-content:space-between; align-items:center;">
-              <span style="color:#cbd5e1; font-size:0.95rem;">Uptime Histórico Garantido</span>
-              <strong style="color:#10b981; font-size:1.2rem;">99.98%</strong>
+          <div class="sobre-compromisso-metricas">
+            <div class="sobre-metrica-item">
+              <span class="sobre-metrica-label">Uptime Histórico Garantido</span>
+              <strong class="sobre-metrica-valor" style="color:#10b981;">99.98%</strong>
             </div>
-            <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:16px 20px; display:flex; justify-content:space-between; align-items:center;">
-              <span style="color:#cbd5e1; font-size:0.95rem;">Tempo Médio de Atendimento</span>
-              <strong style="color:#38bdf8; font-size:1.2rem;">&lt; 15 min</strong>
+            <div class="sobre-metrica-item">
+              <span class="sobre-metrica-label">Tempo Médio de Atendimento</span>
+              <strong class="sobre-metrica-valor" style="color:#38bdf8;">&lt; 15 min</strong>
             </div>
-            <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:16px 20px; display:flex; justify-content:space-between; align-items:center;">
-              <span style="color:#cbd5e1; font-size:0.95rem;">Filiais Ativas Monitoradas</span>
-              <strong style="color:#ffffff; font-size:1.2rem;">30+ Unidades</strong>
+            <div class="sobre-metrica-item">
+              <span class="sobre-metrica-label">Filiais Ativas Monitoradas</span>
+              <strong class="sobre-metrica-valor" style="color:#ffffff;">30+ Unidades</strong>
             </div>
           </div>
         </div>
@@ -380,6 +380,6 @@
   </div>
 
   <!-- Scripts Interativos -->
-  <script src="js/main.js?v=23"></script>
+  <script src="js/main.js?v=24"></script>
 </body>
 </html>

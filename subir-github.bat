@@ -8,7 +8,7 @@ echo ===================================================
 echo.
 echo Salvando alteracoes no codigo...
 git add .
-git commit -m "fix(contato): ancorar diretamente no card do formulario e destravar rolagem no menu mobile"
+git commit -m "fix(sobre): alinhar card de compromisso de entrega e pilares para telas mobile de smartphones"
 echo.
 echo Enviando para o GitHub...
 git push origin main
