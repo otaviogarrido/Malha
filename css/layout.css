@@ -268,10 +268,10 @@
 
 /* Drawer / Menu Lateral Mobile */
 .menu-mobile-gaveta {
-  display: none;
+  display: flex;
   position: fixed;
   top: 0;
-  right: -100%;
+  right: 0;
   width: 82%;
   max-width: 340px;
   height: 100vh;
@@ -282,12 +282,15 @@
   justify-content: space-between;
   z-index: var(--z-modal);
   box-shadow: -10px 0 40px rgba(15, 23, 42, 0.12);
-  transition: right var(--transicao-suave);
+  transform: translateX(105%);
+  transition: transform var(--transicao-suave);
+  visibility: hidden;
   overflow-y: auto;
 }
 
 .menu-mobile-gaveta.ativo {
-  right: 0;
+  transform: translateX(0);
+  visibility: visible;
 }
 
 .menu-mobile-links {
