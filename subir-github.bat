@@ -6,9 +6,9 @@ echo ===================================================
 echo     MALHA TECNOLOGIA - ATUALIZAR GITHUB & SITE
 echo ===================================================
 echo.
-echo Salvando alteracoes (favicons, contador de acessos, etc)...
+echo Salvando alteracoes no codigo...
 git add .
-git commit -m "feat: adicionar contador de acessos monitorados e favicons oficiais"
+git commit -m "style: otimizar responsividade mobile para smartphones Android"
 echo.
 echo Enviando para o GitHub...
 git push origin main

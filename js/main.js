@@ -612,7 +612,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const atualizar = () => {
       const isMobile = window.innerWidth <= 640;
-      const gapMultiplier = isMobile ? 18 : 28;
+      const gapMultiplier = isMobile ? (window.innerWidth < 420 ? 11 : 14) : 28;
 
       cards.forEach((card, i) => {
         let rel = i - active;

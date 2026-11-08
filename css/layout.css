@@ -484,6 +484,26 @@ section {
   min-width: 0;
 }
 
+@media (max-width: 768px) {
+  .nav-faixa-superior .container {
+    padding-left: 8px;
+    padding-right: 8px;
+    justify-content: flex-start;
+  }
+  .nav-faixa-pills {
+    justify-content: flex-start;
+    padding: 6px 4px;
+    margin: 0;
+    width: 100%;
+  }
+  .nav-pill {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
 .nav-faixa-pills::-webkit-scrollbar {
   display: none;
 }

@@ -161,13 +161,15 @@
     font-size: 0.78rem;
   }
 
-  .hero-ctas, .final-ctas {
+  .hero-ctas, .final-ctas, .banner-dell-acoes {
     flex-direction: column;
     width: 100%;
   }
 
-  .hero-ctas .btn, .final-ctas .btn {
+  .hero-ctas .btn, .final-ctas .btn, .banner-dell-acoes .btn {
     width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 
   .botoes-flutuantes {
