@@ -232,11 +232,137 @@
 }
 
 @media (max-width: 860px) {
+  .site-header {
+    padding: 6px 0;
+  }
+
+  .site-nav {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    height: auto;
+    min-height: auto;
+    gap: 8px 12px;
+    align-items: center;
+    padding: 4px 0;
+  }
+
+  .header-lado-esquerdo {
+    display: contents;
+  }
+
+  .site-logo {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 1.25rem;
+    gap: 8px;
+    justify-self: start;
+    align-self: center;
+  }
+
+  .site-logo svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav-acoes {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    flex-wrap: nowrap;
+    justify-self: end;
+    align-self: center;
+  }
+
+  .header-btn-sobre {
+    display: inline-flex !important;
+    font-size: 0.74rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .nav-acoes .btn-solar {
+    font-size: 0.74rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .botao-menu-mobile {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    margin-left: 2px;
+    flex-shrink: 0;
+  }
+
+  .icone-hamburguer {
+    width: 18px;
+    height: 18px;
+  }
+
   .header-busca-box {
-    display: none;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: flex !important;
+    width: 100%;
+    max-width: 100%;
+    height: 38px;
+    padding: 2px 4px 2px 12px;
+    margin-top: 2px;
+    box-sizing: border-box;
+    border-radius: 9999px;
+  }
+
+  .header-busca-icone {
+    width: 15px;
+    height: 15px;
+    margin-right: 6px;
+  }
+
+  .header-busca-input {
+    font-size: 0.82rem;
+    padding: 4px 0;
+  }
+
+  .header-busca-btn {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 400px) {
+  .site-logo span {
+    font-size: 1.1rem;
   }
   .header-btn-sobre {
-    display: none;
+    padding: 5px 8px;
+    font-size: 0.68rem;
+  }
+  .nav-acoes .btn-solar {
+    padding: 5px 8px;
+    font-size: 0.68rem;
+  }
+  .botao-menu-mobile {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+  }
+  .header-busca-box {
+    height: 36px;
+  }
+  .header-busca-input {
+    font-size: 0.78rem;
   }
 }
 

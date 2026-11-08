@@ -8,7 +8,7 @@ echo ===================================================
 echo.
 echo Salvando alteracoes no codigo...
 git add .
-git commit -m "fix(mobile): remover nowrap do titulo hero, ajustar grid de solucoes e conter overflow no Android"
+git commit -m "fix(header-mobile): alinhar barra superior em grid de 2 linhas sem sobreposicao de botoes"
 echo.
 echo Enviando para o GitHub...
 git push origin main
