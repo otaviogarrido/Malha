@@ -814,10 +814,25 @@ document.addEventListener('DOMContentLoaded', () => {
       return cursor;
     };
 
+    const renderConsoleHeader = () => {
+      const headerDiv = document.createElement('div');
+      headerDiv.className = 'tw-console-header';
+      headerDiv.innerHTML = `
+        <div class="tw-console-dots">
+          <span class="dot-red"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+        </div>
+        <span class="tw-console-title">unifi-os // status ao vivo</span>
+      `;
+      container.appendChild(headerDiv);
+    };
+
     const limparEReiniciar = () => {
       if (timerId) clearTimeout(timerId);
       if (isHovered) return; // Se o usuário estiver interagindo com o botão, não reinicia
       container.innerHTML = '';
+      renderConsoleHeader();
       digitarLinha(0);
     };
 

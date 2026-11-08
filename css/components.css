@@ -1056,41 +1056,78 @@
   justify-content: center;
 }
 
-/* --- Typewriter Effect Terminal (Substituição do Card unifi.controller) --- */
+/* --- Typewriter Effect Terminal (Console Unifi Network) --- */
 .unifi-typewriter-container {
   width: 100%;
-  max-width: 320px;
-  min-height: 220px;
+  max-width: 340px;
+  min-height: 250px;
   margin: 0 auto;
   font-family: var(--fonte-codigo, 'Roboto Mono', 'Courier New', monospace);
-  font-size: 0.77rem;
+  font-size: 0.78rem;
   line-height: 1.85;
-  color: var(--cor-texto-principal, #0f172a);
+  color: #f8fafc !important;
   text-align: left;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 4px 0;
+  background: #081628 !important;
+  border: 1px solid rgba(56, 189, 248, 0.28) !important;
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+  border-radius: 16px !important;
+  padding: 16px 18px !important;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.tw-console-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.tw-console-dots {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.tw-console-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.tw-console-dots .dot-red { background: #ef4444; }
+.tw-console-dots .dot-yellow { background: #f59e0b; }
+.tw-console-dots .dot-green { background: #10b981; }
+
+.tw-console-title {
+  font-family: var(--fonte-codigo, monospace);
+  font-size: 0.68rem;
+  color: #94a3b8;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .typewriter-line {
   white-space: nowrap;
-  letter-spacing: -0.015em;
-  color: #1e293b;
+  letter-spacing: -0.01em;
+  color: #f8fafc !important;
   min-height: 1.85em;
   display: flex;
   align-items: center;
+  font-weight: 500;
 }
 
 .typewriter-cursor {
   display: inline-block;
   font-weight: 700;
-  color: var(--cor-primaria, #1d68ff);
+  color: #38bdf8 !important;
   animation: typewriter-cursor-blink 0.75s step-end infinite;
   margin-left: 2px;
 }
@@ -1102,36 +1139,25 @@
 
 /* Destaques de Status no Typewriter */
 .typewriter-line .tw-dots {
-  color: #94a3b8;
+  color: #64748b !important;
   margin: 0 4px;
 }
 
 .typewriter-line .tw-status {
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 4px;
 }
 
 .typewriter-line .tw-status.ok {
-  color: #059669; /* Verde esmeralda */
+  color: #34d399 !important; /* Verde menta vibrante de altíssimo contraste */
 }
 
 .typewriter-line .tw-status.warn {
-  color: #d97706; /* Âmbar / Laranja */
+  color: #fbbf24 !important; /* Âmbar dourado brilhante */
 }
 
 .typewriter-line .tw-status.cyan {
-  color: #0284c7; /* Ciano */
-}
-
-/* Suporte caso a página ou seção esteja em modo escuro */
-@media (prefers-color-scheme: dark) {
-  .typewriter-line {
-    color: #e2e8f0;
-  }
-}
-.secao-escura .typewriter-line,
-[data-theme="dark"] .typewriter-line {
-  color: #f8fafc;
+  color: #38bdf8 !important; /* Ciano elétrico de alto contraste */
 }
 
 /* Barra de Progresso que se transforma em Botão CTA */
@@ -1386,9 +1412,11 @@
   }
 
   .unifi-typewriter-container {
-    max-width: 100%;
+    max-width: 350px;
+    width: 100%;
     margin: 0 auto;
-    font-size: 0.74rem;
+    font-size: clamp(0.68rem, 3.2vw, 0.76rem);
+    padding: 14px 14px !important;
   }
 
   .wifi-float-badge.badge-speed {

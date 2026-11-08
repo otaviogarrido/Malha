@@ -8,7 +8,7 @@ echo ===================================================
 echo.
 echo Salvando alteracoes no codigo...
 git add .
-git commit -m "fix(header-mobile): alinhar barra superior em grid de 2 linhas sem sobreposicao de botoes"
+git commit -m "fix(wifi): aplicar card console de alto contraste com texto branco e badges luminosos no terminal unifi"
 echo.
 echo Enviando para o GitHub...
 git push origin main
