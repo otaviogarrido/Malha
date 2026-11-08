@@ -12,12 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Folha de Estilos Modular -->
-  <link rel="stylesheet" href="css/main.css?v=26">
+  <link rel="stylesheet" href="css/main.css?v=27">
   <!-- Favicon Oficial da Malha -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=26">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=26">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon.png?v=26">
-  <link rel="shortcut icon" href="favicon.ico?v=26">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=27">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=27">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.png?v=27">
+  <link rel="shortcut icon" href="favicon.ico?v=27">
 </head>
 <body>
 
@@ -60,7 +60,7 @@
       <!-- Ações do Cabeçalho: Sobre Nós e Fale Conosco -->
       <div class="nav-acoes">
         <a href="sobre.html" class="btn btn-primary btn-sm header-btn-sobre">Sobre Nós</a>
-        <a href="contato.html#formulario-contato" class="btn btn-primary btn-solar btn-sm">Fale Conosco</a>
+        <button type="button" class="btn btn-primary btn-solar btn-sm btn-abrir-modal-diagnostico">Fale Conosco</button>
         <button class="botao-menu-mobile" aria-label="Abrir menu de navegação" aria-expanded="false">
           <svg class="icone-hamburguer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="3" y1="6" x2="21" y2="6" stroke-linecap="round"></line>
@@ -90,7 +90,7 @@
       <li><a href="contato.html">Contato <span>→</span></a></li>
     </ul>
     <div>
-      <a href="contato.html#formulario-contato" class="btn btn-primary btn-solar" style="width: 100%;">Falar com a Malha</a>
+      <button type="button" class="btn btn-primary btn-solar btn-abrir-modal-diagnostico" style="width: 100%;">Falar com a Malha</button>
       <p style="font-size: 0.8rem; text-align: center; margin-top: 16px; color: var(--cor-texto-mutado);">© 2026 Malha Tecnologia</p>
     </div>
   </aside>
@@ -271,13 +271,13 @@
       </svg>
       <span>Assistente virtual</span>
     </a>
-    <a href="contato.html#formulario-contato" class="btn-flutuante destaque-dell-blue">
+    <button type="button" class="btn-flutuante destaque-dell-blue btn-abrir-modal-diagnostico" aria-label="Fale conosco">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M3 18v-6a9 9 0 0118 0v6"/>
         <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/>
       </svg>
       <span>Fale conosco</span>
-    </a>
+    </button>
   </aside>
 
     <!-- =========================================================================
@@ -424,6 +424,6 @@
   </div>
 
   <!-- Scripts Interativos -->
-  <script src="js/main.js?v=26"></script>
+  <script src="js/main.js?v=27"></script>
 </body>
 </html>
