@@ -8,7 +8,7 @@ echo ===================================================
 echo.
 echo Salvando alteracoes no codigo...
 git add .
-git commit -m "fix(contato e favicon): vincular botoes fale conosco ao formulario e atualizar cache do favicon v22"
+git commit -m "fix(contato): ancorar diretamente no card do formulario e destravar rolagem no menu mobile"
 echo.
 echo Enviando para o GitHub...
 git push origin main

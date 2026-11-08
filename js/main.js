@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const botaoMenuMobile = document.querySelector('.botao-menu-mobile');
   const menuGaveta = document.querySelector('.menu-mobile-gaveta');
   const menuBackdrop = document.querySelector('.menu-mobile-backdrop');
-  const linksMenuMobile = document.querySelectorAll('.menu-mobile-links a');
+  const linksMenuMobile = document.querySelectorAll('.menu-mobile-gaveta a');
 
   const abrirMenuMobile = () => {
     menuGaveta?.classList.add('ativo');
@@ -986,23 +986,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
   iniciarContadorVisitas();
 
-  // --- Foco Automático e Suave no Formulário de Contato ---
-  const focarPrimeiroCampoContato = () => {
-    const campoNome = document.getElementById('contato-nome');
-    if (campoNome) {
-      setTimeout(() => {
-        campoNome.focus({ preventScroll: true });
-      }, 400);
+  // --- Foco Automático e Rolagem Precisa no Formulário de Contato ---
+  const rolarParaFormularioContato = (comFoco = true) => {
+    const alvo = document.getElementById('formulario-contato');
+    if (alvo) {
+      if (typeof fecharMenuMobile === 'function') {
+        fecharMenuMobile();
+      }
+      const cabecalho = document.querySelector('.site-header');
+      const offset = (cabecalho ? cabecalho.offsetHeight : 80) + 16;
+      const alvoTop = alvo.getBoundingClientRect().top + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: Math.max(0, alvoTop),
+        behavior: 'smooth'
+      });
+
+      if (comFoco) {
+        setTimeout(() => {
+          const campoNome = document.getElementById('contato-nome');
+          if (campoNome) {
+            campoNome.focus({ preventScroll: true });
+          }
+        }, 450);
+      }
     }
   };
 
-  if (window.location.hash === '#formulario-contato') {
-    setTimeout(focarPrimeiroCampoContato, 300);
+  // Se a página carregar com âncora de contato na URL
+  if (window.location.hash === '#formulario-contato' || window.location.hash === '#contato') {
+    setTimeout(() => rolarParaFormularioContato(true), 250);
+    window.addEventListener('load', () => {
+      setTimeout(() => rolarParaFormularioContato(false), 200);
+    });
   }
 
-  document.querySelectorAll('a[href$="#formulario-contato"]').forEach((link) => {
-    link.addEventListener('click', () => {
-      focarPrimeiroCampoContato();
+  // Intercepta todos os cliques em links que apontam para o formulário
+  document.querySelectorAll('a[href*="#formulario-contato"], a[href*="#contato"]').forEach((link) => {
+    link.addEventListener('click', (evento) => {
+      if (typeof fecharMenuMobile === 'function') {
+        fecharMenuMobile();
+      }
+      const href = link.getAttribute('href') || '';
+      const isNaMesmaPagina = href.startsWith('#') || 
+                              window.location.pathname.endsWith('contato.html') || 
+                              window.location.pathname.endsWith('/contato') ||
+                              window.location.pathname === '/contato.html';
+
+      if (isNaMesmaPagina && document.getElementById('formulario-contato')) {
+        evento.preventDefault();
+        rolarParaFormularioContato(true);
+        if (history.pushState) {
+          history.pushState(null, '', '#formulario-contato');
+        }
+      }
     });
   });
 });
