@@ -914,6 +914,63 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   iniciarTypewriterUnifi();
+
+  /* -------------------------------------------------------------------------
+   * 15. Contador Inteligente de Acessos Monitorados (com Base Inicial)
+   * ------------------------------------------------------------------------- */
+  const iniciarContadorVisitas = () => {
+    const elementos = document.querySelectorAll('.contador-visitas-numero');
+    if (!elementos.length) return;
+
+    // Base inicial acordada para o lançamento
+    const BASE_INICIAL = 1000;
+
+    const formatarNumero = (num) => Number(num).toLocaleString('pt-BR');
+
+    // Recupera contagem anterior em cache local se existir
+    let visitasAtuais = parseInt(localStorage.getItem('malha_visitas_totais') || '0', 10);
+    if (!visitasAtuais || visitasAtuais < BASE_INICIAL) {
+      visitasAtuais = BASE_INICIAL + Math.floor(Math.random() * 28);
+    }
+
+    // Exibe imediatamente sem atraso visual
+    elementos.forEach((el) => {
+      el.textContent = formatarNumero(visitasAtuais);
+    });
+
+    // Incrementa visita apenas 1 vez por sessão de navegação
+    if (!sessionStorage.getItem('malha_visita_contada')) {
+      visitasAtuais += 1;
+      localStorage.setItem('malha_visitas_totais', visitasAtuais);
+      sessionStorage.setItem('malha_visita_contada', 'true');
+      elementos.forEach((el) => {
+        el.textContent = formatarNumero(visitasAtuais);
+      });
+    }
+
+    // Tenta sincronizar com contador de nuvem global em background
+    const urlApi = 'https://api.counterapi.dev/v1/malha-tecnologia-acessos-site/visitas/up';
+    fetch(urlApi)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && typeof data.count === 'number') {
+          const totalGlobal = BASE_INICIAL + data.count;
+          if (totalGlobal > visitasAtuais) {
+            visitasAtuais = totalGlobal;
+            localStorage.setItem('malha_visitas_totais', visitasAtuais);
+            elementos.forEach((el) => {
+              el.textContent = formatarNumero(visitasAtuais);
+            });
+          }
+        }
+      })
+      .catch(() => {
+        // Fallback silencioso (mantém a contagem persistida localmente)
+      });
+  };
+
+  iniciarContadorVisitas();
 });
+
 
 
