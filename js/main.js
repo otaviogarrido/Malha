@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   menuBackdrop?.addEventListener('click', fecharMenuMobile);
+  document.querySelectorAll('.menu-mobile-fechar-btn').forEach(btn => btn.addEventListener('click', fecharMenuMobile));
 
   linksMenuMobile.forEach(link => {
     link.addEventListener('click', fecharMenuMobile);
@@ -300,6 +301,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const abrirModal = () => {
+    if (typeof fecharMenuMobile === "function") {
+      fecharMenuMobile();
+    }
     if (modalDiagnostico) {
       modalDiagnostico.classList.add('ativo');
       document.body.style.overflow = 'hidden';

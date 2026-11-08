@@ -8,7 +8,7 @@ echo ===================================================
 echo.
 echo Salvando alteracoes no codigo...
 git add .
-git commit -m "fix(contato): adicionar evento onclick direto e scrollIntoView sem travamento de overflow nos botoes fale conosco"
+git commit -m "fix(contato): integrar modal de diagnostico com botao fechar nos botoes fale conosco e adicionar botao fechar na gaveta mobile"
 echo.
 echo Enviando para o GitHub...
 git push origin main

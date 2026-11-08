@@ -12,12 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Folha de Estilos Modular -->
-  <link rel="stylesheet" href="css/main.css?v=25">
+  <link rel="stylesheet" href="css/main.css?v=26">
   <!-- Favicon Oficial da Malha -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=25">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=25">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon.png?v=25">
-  <link rel="shortcut icon" href="favicon.ico?v=25">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=26">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=26">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.png?v=26">
+  <link rel="shortcut icon" href="favicon.ico?v=26">
 </head>
 <body>
 
@@ -60,7 +60,7 @@
       <!-- Ações do Cabeçalho: Sobre Nós e Fale Conosco -->
       <div class="nav-acoes">
         <a href="sobre.html" class="btn btn-primary btn-sm header-btn-sobre">Sobre Nós</a>
-        <a href="#formulario-contato" onclick="rolarParaFormulario(event)" class="btn btn-primary btn-solar btn-sm">Fale Conosco</a>
+        <button type="button" class="btn btn-primary btn-solar btn-sm btn-abrir-modal-diagnostico">Fale Conosco</button>
         <button class="botao-menu-mobile" aria-label="Abrir menu de navegação" aria-expanded="false">
           <svg class="icone-hamburguer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="3" y1="6" x2="21" y2="6" stroke-linecap="round"></line>
@@ -75,7 +75,11 @@
   <!-- Gaveta do Menu Mobile -->
   <div class="menu-mobile-backdrop"></div>
   <aside class="menu-mobile-gaveta" aria-label="Menu móvel">
-    <ul class="menu-mobile-links">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 4px 0 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 16px;">
+      <span style="font-size: 0.95rem; font-weight: 700; color: #ffffff;">Menu de Navegação</span>
+      <button type="button" class="menu-mobile-fechar-btn" style="background: none; border: none; color: #ffffff; font-size: 1.4rem; cursor: pointer; padding: 4px 8px; line-height: 1;" aria-label="Fechar menu">✕</button>
+    </div>
+<ul class="menu-mobile-links">
       <li><a href="index.html">Início <span>→</span></a></li>
       <li><a href="produtos.html">Produtos & Guest Portal <span>→</span></a></li>
       <li><a href="servicos.html">Serviços de TI <span>→</span></a></li>
@@ -86,7 +90,7 @@
       <li><a href="contato.html" style="color:var(--cor-primaria); font-weight:700;">Contato <span>→</span></a></li>
     </ul>
     <div>
-      <a href="#formulario-contato" onclick="rolarParaFormulario(event)" class="btn btn-primary btn-solar" style="width: 100%;">Falar com a Malha</a>
+      <button type="button" class="btn btn-primary btn-solar btn-abrir-modal-diagnostico" style="width: 100%;">Falar com a Malha</button>
       <p style="font-size: 0.8rem; text-align: center; margin-top: 16px; color: var(--cor-texto-mutado);">© 2026 Malha Tecnologia</p>
     </div>
   </aside>
@@ -122,7 +126,7 @@
             Agende 15 minutos de conversa sem compromisso. Entendemos o seu desafio (seja captar mais leads, automatizar processos ou melhorar a rede) e desenhamos a solução sob medida com o melhor custo-benefício.
           </p>
           <div class="banner-dell-acoes" style="margin-top: 24px;">
-            <a href="#formulario-contato" onclick="rolarParaFormulario(event)" class="btn btn-primary btn-solar">Preencher Formulário de Contato ↓</a>
+            <button type="button" class="btn btn-primary btn-solar btn-abrir-modal-diagnostico">Falar com Especialista Agora ↓</button>
           </div>
         </div>
       </div>
@@ -248,13 +252,13 @@
       </svg>
       <span>Assistente virtual</span>
     </a>
-    <a href="#formulario-contato" onclick="rolarParaFormulario(event)" class="btn-flutuante destaque-dell-blue">
+    <button type="button" class="btn-flutuante destaque-dell-blue btn-abrir-modal-diagnostico" aria-label="Fale conosco">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M3 18v-6a9 9 0 0118 0v6"/>
         <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/>
       </svg>
       <span>Fale conosco</span>
-    </a>
+    </button>
   </aside>
 
     <!-- =========================================================================
@@ -325,8 +329,84 @@
     </div>
   </footer>
 
+  <!-- =========================================================================
+       MODAL DE DIAGNÓSTICO TÉCNICO & CONTATO
+       ========================================================================= -->
+  <div class="modal-diagnostico-backdrop" id="modal-diagnostico" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <div class="modal-diagnostico-conteudo">
+      <button type="button" class="modal-btn-fechar" id="modal-fechar-btn" aria-label="Fechar janela de diagnóstico">✕</button>
+
+      <div class="modal-cabecalho">
+        <span class="modal-badge-topo">Avaliação Técnica Gratuita · 15 Minutos</span>
+        <h3 id="modal-titulo" class="modal-titulo">Fale Conosco & Diagnóstico</h3>
+        <p class="modal-subtitulo">
+          Avaliação técnica direta ao ponto. Identificamos gargalos na sua rede, riscos de queda e oportunidades de otimização de infraestrutura.
+        </p>
+      </div>
+
+      <div class="form-mensagem-erro" id="diagnostico-erro" role="alert"></div>
+
+      <form id="form-diagnostico" action="https://formsubmit.co/contato@malha.dev.br" method="POST" target="iframe-envio-silencioso" novalidate>
+        <input type="hidden" name="_subject" value="Novo Contato / Diagnostico - Malha">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="form-grupo">
+          <label for="diagnostico-nome" class="form-label">Seu Nome Completo *</label>
+          <input type="text" id="diagnostico-nome" name="Nome" class="form-input" placeholder="Ex: Carlos Silva" required autocomplete="name">
+        </div>
+
+        <div class="form-dica-contato">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <span>Pelo menos <strong>um meio de contato</strong> (E-mail ou Telefone/WhatsApp) deve ser preenchido.</span>
+        </div>
+
+        <div class="form-grupo">
+          <label for="diagnostico-email" class="form-label">E-mail <span class="opcional">(obrigatório se não preencher telefone)</span></label>
+          <input type="email" id="diagnostico-email" name="Email" class="form-input" placeholder="exemplo@suaempresa.com.br" autocomplete="email">
+        </div>
+
+        <div class="form-grupo">
+          <label for="diagnostico-telefone" class="form-label">Telefone / WhatsApp <span class="opcional">(obrigatório se não preencher e-mail)</span></label>
+          <input type="tel" id="diagnostico-telefone" name="Telefone_WhatsApp" class="form-input" placeholder="(11) 99999-9999" autocomplete="tel">
+        </div>
+
+        <div class="form-grupo">
+          <label for="diagnostico-mensagem" class="form-label">Informações Adicionais <span class="opcional">(opcional)</span></label>
+          <textarea id="diagnostico-mensagem" name="Mensagem_Observacoes" class="form-textarea" rows="3" placeholder="Quantidade de filiais, tipo de roteador ou principal desafio de infraestrutura..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-solar btn-lg" style="width: 100%; margin-top: 8px;">
+          Confirmar Solicitação de Contato
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+
+      <iframe name="iframe-envio-silencioso" id="iframe-envio-silencioso" style="display:none; width:0; height:0; border:none;"></iframe>
+
+      <div class="form-mensagem-sucesso" id="diagnostico-sucesso">
+        <div style="font-size: 2.5rem; margin-bottom: 8px; color: var(--cor-destaque-verde);">✓</div>
+        <h4>Mensagem Enviada com Sucesso!</h4>
+        <p>Recebemos suas informações. Os dados foram salvos no registro e enviados para nossa equipe técnica em <strong>contato@malha.dev.br</strong>.</p>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 18px;">
+          <a href="#" id="diagnostico-link-email-contingencia" class="btn btn-secondary" style="font-size: 0.88rem;">
+            ✉️ Enviar cópia pelo meu aplicativo de E-mail
+          </a>
+          <button type="button" class="btn btn-primary" id="diagnostico-fechar-sucesso" style="width: 100%;">
+            Concluir e Fechar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- Scripts Interativos -->
-  <script src="js/main.js?v=25"></script>
+  <script src="js/main.js?v=26"></script>
   <script>
     window.rolarParaFormulario = function(e) {
       if (e && e.preventDefault) e.preventDefault();
