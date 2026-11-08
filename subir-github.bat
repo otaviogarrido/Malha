@@ -8,7 +8,7 @@ echo ===================================================
 echo.
 echo Salvando alteracoes no codigo...
 git add .
-git commit -m "fix(botoes): replicar padrao modal do botao site survey em todos os botoes fale conosco do site"
+git commit -m "fix(contato): tornar secao de contato responsiva em 1 coluna no mobile e alinhar modal perfeitamente"
 echo.
 echo Enviando para o GitHub...
 git push origin main

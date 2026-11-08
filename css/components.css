@@ -4386,3 +4386,46 @@
 
 
 
+
+/* ==========================================================================
+   PÁGINA CONTATO: GRID E FORMULÁRIO RESPONSIVO
+   ========================================================================== */
+.contato-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.contato-form-card {
+  background: #ffffff;
+  border: 1px solid var(--cor-borda);
+  border-radius: 20px;
+  padding: 36px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .contato-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contato-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .contato-form-card {
+    padding: 22px 16px !important;
+    border-radius: 16px !important;
+  }
+
+  .contato-form-card h3 {
+    font-size: 1.3rem !important;
+  }
+}
